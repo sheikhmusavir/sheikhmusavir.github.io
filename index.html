@@ -1,0 +1,702 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Sheikh Musavir Arfat — Cloud Security · Netskope · Technical Support</title>
+<meta name="description" content="Sheikh Musavir Arfat — Technical Support Engineer focused on Netskope SSE, cloud security, DLP, networking and enterprise troubleshooting.">
+<meta name="theme-color" content="#050812">
+<meta property="og:title" content="Sheikh Musavir Arfat">
+<meta property="og:description" content="Technical Support Engineer · Cloud Security · Netskope Specialist">
+<meta property="og:type" content="website">
+<style>
+:root{
+  --bg:#050915;--bg2:#09152a;--panel:rgba(8,18,34,.68);--panel2:rgba(10,24,45,.84);
+  --line:rgba(145,190,230,.15);--line2:rgba(95,242,213,.38);--text:#f2f7ff;--muted:#91a4bd;
+  --soft:#ccd8e7;--cyan:#5ff2d5;--blue:#66b8ff;--violet:#a98cff;--pink:#ff78d8;--amber:#ffb86b;
+  --max:1240px;--ease:cubic-bezier(.2,.8,.2,1);--radius:24px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{margin:0;background:radial-gradient(circle at 15% -10%,rgba(88,205,255,.08),transparent 30%),linear-gradient(180deg,var(--bg),#03050b 60%,#050b15);color:var(--text);font:16px/1.65 Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.028;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.95' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");z-index:-1}
+a{color:inherit}button,input{font:inherit}button{border:0;background:none;color:inherit;cursor:pointer}
+.wrap{width:min(var(--max),calc(100% - 44px));margin:auto}
+.progress{position:fixed;top:0;left:0;height:3px;width:0;transform-origin:left;background:linear-gradient(90deg,var(--cyan),var(--blue),var(--violet),var(--pink));z-index:1000}
+.nav{
+ position:sticky;top:0;z-index:900;border-bottom:1px solid var(--line);
+ background:rgba(4,8,15,.64);backdrop-filter:blur(22px) saturate(150%);
+}
+.nav-inner{height:72px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.logo{font:800 24px/1 Georgia,serif;letter-spacing:-.08em;text-decoration:none}.logo b{color:var(--cyan)}
+.links{display:flex;gap:25px;align-items:center;color:var(--muted);font-size:12px}
+.links a{position:relative;text-decoration:none}.links a:after{content:"";position:absolute;left:0;right:0;bottom:-11px;height:2px;background:linear-gradient(90deg,var(--cyan),var(--violet));transform:scaleX(0);transform-origin:left;transition:.25s}.links a:hover,.links a.active{color:var(--text)}.links a:hover:after,.links a.active:after{transform:scaleX(1)}
+.nav-actions{display:flex;align-items:center;gap:8px}.pill{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--line);border-radius:999px;padding:8px 11px;color:var(--soft);background:rgba(10,19,32,.55);font-size:11px}.pill:hover{border-color:var(--line2)}
+.mobile-menu{display:none}
+
+.hero{position:relative;min-height:calc(100vh - 72px);display:grid;align-items:center;overflow:hidden;padding:58px 0 70px}
+.hero-art{position:absolute;inset:-4%;background-image:linear-gradient(90deg,rgba(3,7,13,.92) 0%,rgba(3,7,13,.68) 43%,rgba(3,7,13,.34) 75%,rgba(3,7,13,.65) 100%),url("hero-vision.png");background-size:cover;background-position:center;filter:blur(1.2px) saturate(1.1) brightness(.62);transform:scale(1.045);opacity:.86}
+.hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;mix-blend-mode:screen;opacity:.18;filter:saturate(1.25) contrast(1.15)}
+.hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:minmax(0,1.24fr) minmax(360px,.76fr);gap:52px;align-items:center}
+.hero-kicker{font:700 10px/1.2 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.23em;text-transform:uppercase;color:var(--cyan);display:flex;gap:9px;align-items:center}.hero-kicker i{width:7px;height:7px;border-radius:50%;background:var(--cyan);box-shadow:0 0 16px var(--cyan);animation:live 1.5s infinite}@keyframes live{50%{transform:scale(.65);opacity:.55}}
+.hero h1{font-size:clamp(3.2rem,7.25vw,7.6rem);line-height:.88;letter-spacing:-.085em;margin:19px 0 18px;white-space:nowrap}
+.hero h1 span{background:linear-gradient(100deg,#fff,var(--cyan) 45%,var(--blue) 76%,var(--violet));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero-sub{color:var(--soft);font-size:clamp(16px,1.6vw,21px);max-width:760px}.hero-sub b{color:var(--text)}
+.hero-desc{color:var(--muted);max-width:740px;margin:14px 0 0}
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}.cta{display:inline-flex;align-items:center;gap:10px;border-radius:999px;padding:13px 17px;border:1px solid var(--line);background:rgba(7,16,28,.67);text-decoration:none;font-size:12px;transition:.3s var(--ease)}.cta:hover{transform:translateY(-3px);border-color:var(--line2);box-shadow:0 14px 45px rgba(0,0,0,.25)}.cta.primary{background:var(--cyan);color:#031017;border-color:transparent;font-weight:900}
+.hero-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:34px;max-width:760px}.hero-stat{border-top:1px solid rgba(169,205,255,.2);padding-top:13px}.hero-stat b{font:800 24px/1 ui-monospace,SFMono-Regular,Menlo,monospace}.hero-stat span{display:block;margin-top:6px;color:var(--muted);font-size:10px}
+.hud{position:relative;border:1px solid rgba(121,219,255,.18);background:linear-gradient(180deg,rgba(12,22,38,.82),rgba(5,11,20,.66));backdrop-filter:blur(22px);border-radius:28px;box-shadow:0 35px 100px rgba(0,0,0,.28),inset 0 0 0 1px rgba(255,255,255,.025);padding:15px;transform:perspective(1300px) rotateY(-9deg) rotateX(2deg);transition:transform .6s var(--ease)}
+.hud:hover{transform:perspective(1300px) rotateY(0) rotateX(0) translateY(-4px)}
+.hud-head{display:flex;align-items:center;justify-content:space-between;font:700 10px/1 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--muted);padding:5px 4px 12px}.hud-head strong{color:var(--text)}.hud-live{color:var(--cyan)}
+.world{height:195px;border-radius:19px;border:1px solid var(--line);position:relative;overflow:hidden;background:
+ radial-gradient(circle at 72% 28%,rgba(76,235,217,.13),transparent 26%),
+ radial-gradient(circle at 40% 62%,rgba(89,183,255,.12),transparent 24%),
+ linear-gradient(180deg,rgba(12,26,46,.65),rgba(4,9,17,.82));
+}
+.world:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent 0 18px,rgba(117,206,255,.06) 18px 19px),repeating-linear-gradient(90deg,transparent 0 30px,rgba(117,206,255,.045) 30px 31px);mask-image:linear-gradient(to bottom,transparent,black 20%,black 80%,transparent)}
+.arc{position:absolute;width:130%;height:120px;left:-16%;top:36px;border:1px solid rgba(111,227,255,.35);border-color:rgba(111,227,255,.25) transparent transparent transparent;border-radius:50%;transform:rotate(-12deg)}
+.arc.a2{top:65px;transform:rotate(14deg);border-color:rgba(177,149,255,.28) transparent transparent transparent}
+.dot{position:absolute;width:5px;height:5px;border-radius:50%;background:var(--cyan);box-shadow:0 0 16px 2px rgba(102,242,221,.5);animation:drift 3.8s linear infinite}.dot.d2{background:var(--blue);animation-delay:-1.2s}.dot.d3{background:var(--violet);animation-delay:-2.2s}@keyframes drift{0%{transform:translate(0,0);opacity:.3}50%{transform:translate(24px,-11px);opacity:1}100%{transform:translate(0,0);opacity:.3}}
+.map-label{position:absolute;font-size:9px;color:var(--muted);letter-spacing:.08em;text-transform:uppercase}.map-label.l1{left:12px;top:12px}.map-label.l2{right:12px;bottom:12px}
+.hud-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:10px;margin-top:10px}.hud-panel{border:1px solid var(--line);border-radius:17px;padding:12px;background:rgba(4,9,17,.55)}.hud-panel h4{font-size:10px;margin:0 0 9px;color:var(--muted);font-weight:700;letter-spacing:.1em;text-transform:uppercase}.signal{display:flex;align-items:end;gap:2px;height:58px}.signal i{flex:1;border-radius:4px 4px 1px 1px;background:linear-gradient(180deg,var(--cyan),var(--blue));opacity:.8;animation:bars 1.8s ease-in-out infinite}.signal i:nth-child(2){animation-delay:.1s}.signal i:nth-child(3){animation-delay:.2s}.signal i:nth-child(4){animation-delay:.3s}.signal i:nth-child(5){animation-delay:.4s}.signal i:nth-child(6){animation-delay:.5s}.signal i:nth-child(7){animation-delay:.6s}.signal i:nth-child(8){animation-delay:.7s}@keyframes bars{0%,100%{height:25%}50%{height:85%}}
+.risk{display:grid;gap:7px}.risk-row{display:flex;align-items:center;justify-content:space-between;font-size:10px;color:var(--soft)}.risk-row i{width:7px;height:7px;border-radius:50%;background:var(--cyan);box-shadow:0 0 10px var(--cyan)}.risk-row:nth-child(2) i{background:var(--amber);box-shadow:0 0 10px var(--amber)}.risk-row:nth-child(3) i{background:var(--violet);box-shadow:0 0 10px var(--violet)}
+.float-chip{position:absolute;z-index:3;border:1px solid rgba(134,205,255,.19);background:rgba(4,12,23,.72);backdrop-filter:blur(10px);padding:9px 12px;border-radius:13px;font-size:10px;box-shadow:0 12px 32px rgba(0,0,0,.22);animation:float 5.6s ease-in-out infinite}.float-chip b{display:block;color:var(--text)}.float-chip span{color:var(--muted);font-size:9px}.chip-sase{left:1%;top:24%;}.chip-swg{right:2%;top:18%;animation-delay:-1.2s}.chip-dlp{left:11%;bottom:13%;animation-delay:-2.3s}.chip-ztna{right:10%;bottom:9%;animation-delay:-3.3s}@keyframes float{50%{transform:translate3d(0,-11px,0)}}
+
+.section{position:relative;padding:115px 0;border-top:1px solid var(--line)}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:25px;margin-bottom:34px}.eyebrow{color:var(--cyan);font:700 10px/1.2 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.2em;text-transform:uppercase}.section-head h2{margin:10px 0 0;font-size:clamp(2.4rem,5vw,4.6rem);line-height:.95;letter-spacing:-.065em}.section-head p{max-width:650px;color:var(--muted);margin:0}
+
+.mission{display:grid;grid-template-columns:1.1fr .9fr;gap:16px}.glass{border:1px solid var(--line);background:linear-gradient(180deg,rgba(255,255,255,.035),rgba(255,255,255,.014));border-radius:var(--radius);padding:29px;backdrop-filter:blur(14px);box-shadow:0 25px 75px rgba(0,0,0,.14)}.glass p{color:var(--soft);margin:0 0 14px}.glass p:last-child{margin:0}
+.proof-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.proof{border:1px solid var(--line);border-radius:19px;padding:18px;background:rgba(6,15,27,.62)}.proof b{font:800 28px/1 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--cyan)}.proof span{display:block;color:var(--muted);font-size:10px;margin-top:7px}
+
+.stack{display:grid;grid-template-columns:1fr 1.2fr 1fr;gap:13px;align-items:stretch}.stack-side{display:grid;gap:11px;align-content:center}.stack-card{border:1px solid var(--line);background:rgba(8,17,30,.58);border-radius:18px;padding:15px;transition:.3s var(--ease);position:relative;overflow:hidden}.stack-card:hover{transform:translateY(-4px);border-color:var(--line2)}.stack-card b{display:block;font-size:13px}.stack-card small{display:block;color:var(--muted);font-size:9px;margin-top:3px}.stack-core{border:1px solid rgba(102,242,221,.2);background:radial-gradient(circle at 50% 25%,rgba(102,242,221,.08),transparent 45%),rgba(8,18,31,.7);border-radius:25px;padding:26px;position:relative;overflow:hidden}.core-glow{position:absolute;inset:-45%;background:conic-gradient(from 0deg,transparent 0 40%,rgba(102,242,221,.10),transparent 56% 100%);animation:spin 9s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}.stack-core>*{position:relative;z-index:1}.stack-core h3{margin:0;font-size:19px}.stack-core p{margin:5px 0 18px;color:var(--muted);font-size:10px}.modules{display:grid;grid-template-columns:1fr 1fr;gap:9px}.module{border:1px solid var(--line);background:rgba(4,10,18,.55);border-radius:14px;padding:13px;text-align:left;font-size:11px;transition:.25s}.module:hover{transform:translateY(-2px);border-color:var(--line2);box-shadow:0 10px 30px rgba(0,0,0,.16)}.module span{display:block;color:var(--muted);font-size:9px;margin-top:2px}
+
+.timeline{position:relative;padding-left:21px}.timeline:before{content:"";position:absolute;left:5px;top:0;bottom:0;width:1px;background:linear-gradient(var(--cyan),var(--violet),transparent)}.timeline-row{display:grid;grid-template-columns:90px 20px 1fr;gap:17px;align-items:start;margin-bottom:25px}.timeline-year{font:700 10px/1.4 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--cyan);padding-top:13px}.timeline-dot{width:11px;height:11px;border-radius:50%;border:2px solid var(--cyan);background:var(--bg);box-shadow:0 0 0 6px rgba(102,242,221,.07);margin-top:17px}.timeline-card{border:1px solid var(--line);background:rgba(8,17,30,.58);border-radius:20px;padding:23px;transition:.3s var(--ease)}.timeline-card:hover{transform:translateX(4px);border-color:var(--line2)}.timeline-card .dates,.timeline-card .org{color:var(--muted)}.timeline-card h3{font-size:20px;margin:3px 0}.timeline-card ul{margin:13px 0 0;padding-left:18px}.timeline-card li{color:var(--soft);font-size:12px;margin-bottom:6px}
+
+.case-tools{display:grid;grid-template-columns:minmax(270px,1fr) auto;gap:12px;position:sticky;top:84px;z-index:30;background:rgba(4,8,15,.66);backdrop-filter:blur(19px);padding:10px;border:1px solid var(--line);border-radius:19px}.search{display:flex;align-items:center;gap:10px;padding:11px 13px;border:1px solid var(--line);border-radius:13px;background:rgba(8,17,30,.7)}.search input{width:100%;border:0;background:transparent;outline:0;color:var(--text);font-size:12px}.filters{display:flex;flex-wrap:wrap;gap:7px;justify-content:end}.filter{border:1px solid var(--line);padding:9px 12px;border-radius:999px;color:var(--muted);font-size:10px;background:rgba(8,17,30,.7);transition:.2s}.filter:hover{color:var(--text);border-color:var(--line2)}.filter.active{background:var(--cyan);color:#031017;border-color:transparent;font-weight:800}.case-count{color:var(--muted);font-size:10px;margin:9px 2px 0}.case-count b{color:var(--text)}
+.case-cluster{margin-top:28px}.cluster-head{display:flex;align-items:center;gap:10px;margin-bottom:9px;color:var(--muted);font:700 9px/1.2 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.14em;text-transform:uppercase}.cluster-head:after{content:"";height:1px;flex:1;background:var(--line)}.cluster-head b{color:var(--cyan)}
+.case{background:rgba(8,18,34,.70)!important;border-color:var(--line)!important;border-radius:18px!important;box-shadow:none!important;transform:none!important}.cwrap{height:0;overflow:hidden;transition:height .42s var(--ease)}.case:before{background:linear-gradient(var(--cyan),var(--violet))!important}.case:hover{border-color:var(--line2)!important;box-shadow:0 15px 40px rgba(0,0,0,.2)!important}
+.chead{background:none!important}.chead{position:relative}.ct{font-size:13px!important}.teaser{color:var(--muted)!important}.cbody{background:rgba(0,0,0,.08)}
+.carrow{width:24px;height:24px;display:grid;place-items:center;border:1px solid var(--line);border-radius:50%;margin-top:1px;color:var(--muted);transition:transform .28s var(--ease),border-color .28s,color .28s;background:rgba(6,15,27,.52)}
+.carrow svg{display:none!important}
+.carrow::before{content:"";width:7px;height:7px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg) translateY(-1px);transition:transform .28s var(--ease)}
+.case.open .carrow{transform:none;color:var(--cyan);border-color:rgba(95,242,213,.34)}
+.case.open .carrow::before{transform:rotate(225deg) translate(-1px,-1px)}
+.case .chead:hover .carrow{border-color:rgba(95,242,213,.34);color:var(--text)}
+
+.skills-grid{display:grid;grid-template-columns:1fr 1fr;gap:13px}.skill-card,.edu-card{border:1px solid var(--line);background:rgba(8,17,30,.58);border-radius:21px;padding:23px;transition:.3s}.skill-card:hover,.edu-card:hover{transform:translateY(-3px);border-color:var(--line2)}.skill-card h3{font-size:14px;margin:0 0 13px}.tags{display:flex;flex-wrap:wrap;gap:7px}.tags span{font-size:10px;border:1px solid var(--line);border-radius:999px;padding:6px 9px;color:var(--soft);background:rgba(255,255,255,.02);cursor:pointer}.tags span:hover{border-color:var(--line2);color:var(--text);transform:translateY(-1px)}
+.edu-grid{display:grid;grid-template-columns:1fr 1fr;gap:13px}.edu-card .dates{font:700 9px ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--cyan);letter-spacing:.15em;text-transform:uppercase}.edu-card h3{font-size:17px;margin:6px 0}.edu-card p,.edu-card li{font-size:12px;color:var(--soft)}
+
+.contact{padding:150px 0 110px;text-align:center;position:relative;overflow:hidden}.contact:before{content:"";position:absolute;width:600px;height:600px;left:50%;top:-300px;transform:translateX(-50%);background:radial-gradient(circle,rgba(102,242,221,.12),transparent 68%);pointer-events:none}.contact h2{position:relative;font-size:clamp(3rem,7vw,6.8rem);line-height:.87;letter-spacing:-.08em;margin:16px 0}.contact p{position:relative;color:var(--muted);max-width:620px;margin:auto}.contact .actions{position:relative;justify-content:center}
+footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-size:10px}.footer{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.reveal{opacity:0;transform:translateY(27px);transition:.8s var(--ease)}.reveal.in{opacity:1;transform:none}
+.to-top{position:fixed;right:21px;bottom:21px;width:42px;height:42px;border:1px solid var(--line);border-radius:50%;background:rgba(8,17,30,.78);backdrop-filter:blur(12px);color:var(--cyan);z-index:200;opacity:0;pointer-events:none;transform:translateY(9px);transition:.3s}.to-top.show{opacity:1;pointer-events:auto;transform:none}
+
+@media(max-width:980px){
+ .links{display:none}.mobile-menu{display:inline-flex}.hero-grid{grid-template-columns:1fr}.hud{max-width:570px}.hero{min-height:auto}.hero h1{font-size:clamp(3.1rem,11vw,6rem)}.hero-stats{max-width:none}
+ .mission{grid-template-columns:1fr}.stack{grid-template-columns:1fr}.stack-side{grid-template-columns:1fr 1fr}.stack-core{order:-1}.timeline-row{grid-template-columns:1fr 20px 1fr}.timeline-year{grid-column:1}.timeline-dot{grid-column:2;grid-row:1 / span 2}.timeline-card{grid-column:3}.skills-grid,.edu-grid{grid-template-columns:1fr}
+ .case-tools{position:static;grid-template-columns:1fr}.filters{justify-content:start}
+}
+@media(max-width:620px){
+ .wrap{width:min(var(--max),calc(100% - 26px))}.nav-inner{height:64px}.hero{padding:55px 0 70px}.hero h1{font-size:clamp(2.5rem,10.3vw,4.6rem)}.hero-stats{grid-template-columns:1fr 1fr}.float-chip{display:none}.hud-grid{grid-template-columns:1fr}.world{height:170px}
+ .section{padding:90px 0}.section-head{display:block}.section-head p{margin-top:14px}.proof-grid,.modules,.stack-side{grid-template-columns:1fr}.timeline-row{grid-template-columns:20px 1fr}.timeline-year{grid-column:2}.timeline-dot{grid-column:1;grid-row:1 / span 2}.timeline-card{grid-column:2}.case .chead{padding:14px}.cbody{padding-left:14px!important}
+}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important;transition:none!important}.reveal{opacity:1!important;transform:none!important}}
+</style>
+</head>
+<body>
+<div class="progress" id="progress"></div>
+
+<nav class="nav">
+ <div class="wrap nav-inner">
+  <a class="logo" href="#top">S<span>M</span></a>
+  <div class="links">
+   <a href="#about">About</a><a href="#platform">Platform</a><a href="#experience">Experience</a><a href="#cases">Case Studies</a><a href="#skills">Skills</a><a href="#contact">Contact</a>
+  </div>
+  <div class="nav-actions"><button class="pill" id="theme" type="button">◐ Theme</button><button class="pill mobile-menu" id="mobileMenu" type="button">Menu</button></div>
+ </div>
+</nav>
+
+<header class="hero" id="top">
+ <div class="hero-art"></div>
+ <video class="hero-video" autoplay muted loop playsinline preload="metadata" aria-hidden="true">
+   <source src="security-network-loop.mp4" type="video/mp4">
+ </video>
+
+ <div class="float-chip chip-sase"><b>SASE</b><span>Secure access</span></div>
+ <div class="float-chip chip-swg"><b>SWG</b><span>Web security</span></div>
+ <div class="float-chip chip-dlp"><b>DLP</b><span>Data protection</span></div>
+ <div class="float-chip chip-ztna"><b>ZTNA</b><span>Zero trust</span></div>
+
+ <div class="wrap hero-grid">
+  <div>
+   <div class="hero-kicker"><i></i> Technical Support Engineer · Cloud Security · Netskope Specialist</div>
+   <h1>Sheikh <span>Musavir Arfat</span></h1>
+   <div class="hero-sub"><b>Enterprise Support</b> &nbsp;|&nbsp; SSE &nbsp;|&nbsp; Netskope &nbsp;|&nbsp; Zscaler &nbsp;|&nbsp; Cloud Security &nbsp;|&nbsp; 3.5+ Years</div>
+   <p class="hero-desc">Solving real-world cloud, network and security challenges through traffic analysis, logs, packet captures and practical root-cause work — with 20 documented investigations behind the profile.</p>
+   <div class="actions">
+    <a class="cta primary" href="#cases">Explore Case Studies →</a>
+    <a class="cta" href="mailto:sheich.musavir@gmail.com">Contact Me ↗</a>
+    <a class="cta" href="https://www.linkedin.com/in/smarfat/" target="_blank" rel="noopener">LinkedIn ↗</a>
+   </div>
+   <div class="hero-stats">
+    <div class="hero-stat"><b data-n="20">0</b><span>Documented investigations</span></div>
+    <div class="hero-stat"><b data-n="3.5">0</b><span>Years experience</span></div>
+    <div class="hero-stat"><b>SSE</b><span>Netskope specialist</span></div>
+    <div class="hero-stat"><b>RCA</b><span>Packet + log analysis</span></div>
+   </div>
+  </div>
+
+  <div class="hud" id="hud">
+   <div class="hud-head"><strong>LIVE TRAFFIC / DEMO</strong><span class="hud-live">● ONLINE</span></div>
+   <div class="world">
+     <div class="arc"></div><div class="arc a2"></div>
+     <div class="dot" style="left:28%;top:46%"></div><div class="dot d2" style="left:60%;top:31%"></div><div class="dot d3" style="left:79%;top:56%"></div>
+     <div class="map-label l1">global traffic</div><div class="map-label l2">policy engine / active</div>
+   </div>
+   <div class="hud-grid">
+    <div class="hud-panel"><h4>Traffic telemetry</h4><div class="signal"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+    <div class="hud-panel"><h4>Controls</h4><div class="risk"><div class="risk-row"><span>Cloud Apps</span><i></i></div><div class="risk-row"><span>Web Traffic</span><i></i></div><div class="risk-row"><span>Threats</span><i></i></div></div></div>
+   </div>
+  </div>
+ </div>
+</header>
+
+<section class="section" id="about"><div class="wrap">
+ <div class="section-head"><div><div class="eyebrow">01 / About Me</div><h2>Solving real-world challenges.</h2></div><p>The work is technical, but the objective is simple: identify what actually broke, isolate the evidence, and communicate the fix clearly.</p></div>
+ <div class="mission reveal">
+  <div class="glass"><p>Technical Support Engineer with 3.5+ years of experience in enterprise technical support and cloud security operations. Hands-on across Netskope SSE, SWG, CASB, DLP, Email DLP over SMTP, ZTNA, Enterprise Browser, Endpoint Protection, and Malware &amp; Threat Protection.</p><p>Strong at finding root cause in multi-vendor incidents through packet captures and debug-log analysis — and explaining technical findings in plain language that customers can act on.</p></div>
+  <div class="proof-grid"><div class="proof"><b>20</b><span>investigations documented</span></div><div class="proof"><b>RCA</b><span>Wireshark + logs + protocol evidence</span></div><div class="proof"><b>LIVE</b><span>high-severity calls and rollouts</span></div><div class="proof"><b>AI</b><span>retrieval-grounded support workflow experiments</span></div></div>
+ </div>
+</div></section>
+
+<section class="section" id="platform"><div class="wrap">
+ <div class="section-head"><div><div class="eyebrow">02 / Security Stack</div><h2>The stack I investigate.</h2></div><p>Hover the modules. Click one to jump into the corresponding case family below.</p></div>
+ <div class="stack reveal">
+  <div class="stack-side">
+   <button class="stack-card module-link" data-filter="client"><b>HQ / Branch</b><small>Corporate sites</small></button>
+   <button class="stack-card module-link" data-filter="client"><b>Remote Users</b><small>Netskope Client</small></button>
+   <button class="stack-card module-link" data-filter="client"><b>Mobile</b><small>Managed + BYOD</small></button>
+   <button class="stack-card module-link" data-filter="dlp"><b>Mail Servers</b><small>Exchange Online / SMTP</small></button>
+  </div>
+  <div class="stack-core">
+   <div class="core-glow"></div><h3>Netskope Security Cloud</h3><p>Security Service Edge · inspection · policy · access · protection</p>
+   <div class="modules">
+    <button class="module module-link" data-filter="web">SWG<span>web security</span></button><button class="module module-link" data-filter="web">CASB<span>cloud apps</span></button>
+    <button class="module module-link" data-filter="dlp">DLP<span>data protection</span></button><button class="module module-link" data-filter="client">ZTNA<span>private access</span></button>
+    <button class="module module-link" data-filter="client">CFW<span>network policy</span></button><button class="module module-link" data-filter="web">Threat Protection<span>malware / threats</span></button>
+    <button class="module module-link" data-filter="dlp">Email DLP<span>SMTP inspection</span></button><button class="module module-link" data-filter="web">Browser / Access<span>identity / RBI</span></button>
+   </div>
+  </div>
+  <div class="stack-side">
+   <button class="stack-card module-link" data-filter="web"><b>Web</b><small>Internet traffic</small></button>
+   <button class="stack-card module-link" data-filter="web"><b>SaaS Apps</b><small>Managed + shadow IT</small></button>
+   <button class="stack-card module-link" data-filter="client"><b>Private Apps</b><small>DC / IaaS via NPA</small></button>
+   <button class="stack-card module-link" data-filter="dlp"><b>External Recipients</b><small>Email delivery path</small></button>
+  </div>
+ </div>
+</div></section>
+
+<section class="section" id="experience"><div class="wrap">
+ <div class="section-head"><div><div class="eyebrow">03 / Experience</div><h2>The road so far.</h2></div><p>Enterprise infrastructure first; cloud security and deeper incident analysis as the work evolved.</p></div>
+ <div class="timeline reveal"></div>
+</div></section>
+
+<section class="section" id="cases"><div class="wrap">
+ <div class="section-head"><div><div class="eyebrow">04 / Documented Investigations</div><h2>The evidence is the portfolio.</h2></div><p>20 anonymized enterprise investigations — symptoms, evidence, root cause and practical resolution. Search them like a real support archive.</p></div>
+ <div class="case-tools">
+  <label class="search"><span>⌕</span><input id="caseSearch" type="search" placeholder="Search regex, DTLS, DNS, SMTP, certificate, WSL…" aria-label="Search investigations"></label>
+  <div class="filters">
+   <button class="filter active" data-filter="all">All · 20</button><button class="filter" data-filter="dlp">DLP · 4</button><button class="filter" data-filter="epdlp">Endpoint · 2</button><button class="filter" data-filter="client">Client · 6</button><button class="filter" data-filter="web">Web / Access · 8</button>
+  </div>
+ </div>
+ <div class="case-count" id="caseCount">Showing <b>20</b> of 20 investigations</div>
+ <div id="caseArchive"><section class="case-cluster" data-cluster="dlp"><div class="cluster-head"><span>DLP / Detection Engineering</span><b>04</b></div><article class="case" data-cat="dlp" data-k="aadhaar national id regex re2 verhoeff checksum false positive proximity keyword uidai detection" id="case-01">
+<button aria-controls="case-01-body" aria-expanded="false" class="chead" type="button">
+<span class="cnum">01</span>
+<span class="cmeta"><span class="ct">The national-ID pattern with an 80% noise problem</span><span class="teaser">A customer's Aadhaar regex matched nearly every 12-digit number in their traffic.</span></span>
+<span class="ctag">RE2 · DLP</span>
+<span aria-hidden="true" class="carrow"><svg viewbox="0 0 24 24"><path d="M6 9l6 6 6-6"></path></svg></span>
+</button>
+<div class="cwrap" id="case-01-body">
+<div class="cbody">
+<div class="figs"><span class="fig"><b>2</b><span>structural rules exist</span></span><span class="fig"><b>~80%</b><span>of 12-digit strings matched</span></span><span class="fig"><b>12</b><span>digit target format</span></span></div>
+<div class="cbgrid"><div class="cb"><b>Symptom</b><p>An Aadhaar (India national ID) detection rule flooded the customer with false positives — order IDs, transaction references, and phone numbers all triggered it.</p></div><div class="cb"><b>Investigation</b><p>Researched the issuing authority's actual numbering structure: only two rules exist — first digit 2–9, and a Verhoeff checksum as the 12th digit. The middle digits are random, so no regex refinement could ever be selective. The unformatted 12-digit branch matched roughly 80% of all 12-digit strings.</p></div><div class="cb"><b>Root cause</b><p>Checksum validation needs arithmetic, which no regex can express — and the platform's RE2-style engine additionally rejects lookarounds (<code>(?…)</code> constructs), ruling out boundary tricks.</p></div><div class="cb"><b>Fix</b><p>Word-boundary-hardened pattern within RE2 limits, layered with the platform's predefined identifier and proximity keywords. Delivered a categorized synthetic test corpus — match, non-match, and boundary cases — so the customer could verify before rollout.</p></div></div>
+<div class="cfoot"><button class="copyl" type="button">Copy link</button></div>
+</div>
+</div>
+</article>
+<article class="case" data-cat="dlp" data-k="cipher encrypted entropy regex dfa compilation timeout quantifier ascii phone number false positive" id="case-02">
+<button aria-controls="case-02-body" aria-expanded="false" class="chead" type="button">
+<span class="cnum">02</span>
+<span class="cmeta"><span class="ct">The encrypted file that looked like phone numbers</span><span class="teaser">Cipher text kept tripping phone-number detection — and every "fix" regex crashed the compiler.</span></span>
+<span class="ctag">RE2 · DLP</span>
+<span aria-hidden="true" class="carrow"><svg viewbox="0 0 24 24"><path d="M6 9l6 6 6-6"></path></svg></span>
+</button>
+<div class="cwrap" id="case-02-body">
+<div class="cbody">
+<div class="figs"><span class="fig"><b>7.89</b><span>bits/byte entropy</span></span><span class="fig"><b>{50}</b><span>fixed quantifier</span></span><span class="fig"><b>0</b><span>hits on normal documents</span></span></div>
+<div class="cbgrid"><div class="cb"><b>Symptom</b><p>A near-random cipher file (7.89 bits/byte entropy) triggered the phone-number rule constantly. The customer wanted a pattern to identify cipher files so they could be excluded.</p></div><div class="cb"><b>Investigation</b><p>Byte-distribution and entropy analysis, then systematic elimination: negated Unicode classes timed out at DFA compilation, high-byte patterns never matched because the engine strips non-ASCII before scanning, and bounded quantifiers like <code>{150,1024}</code> blew the compile budget — confirmed by a "Regex compilation timed out" error captured in a HAR file.</p></div><div class="cb"><b>Root cause</b><p>RE2 compiles to a DFA with a strict size budget; large quantifier upper bounds multiply states until compilation fails. The idea was right — the state-machine cost was the problem.</p></div><div class="cb"><b>Fix</b><p>A fixed-quantifier pattern — <code>[!-~]{50}</code> — matching 50+ consecutive printable non-space characters. Minimal DFA, instant compile, tens of thousands of hits on cipher files, zero on normal documents.</p></div></div>
+<div class="cfoot"><button class="copyl" type="button">Copy link</button></div>
+</div>
+</div>
+</article>
+<article class="case" data-cat="dlp" data-k="webmail draft autosave dlp bypass har sync endpoint casb context aware access unmanaged device" id="case-03">
+<button aria-controls="case-03-body" aria-expanded="false" class="chead" type="button">
+<span class="cnum">03</span>
+<span class="cmeta"><span class="ct">The draft that escaped before the block</span><span class="teaser">Blocking the send wasn't enough — the mail client had already saved the content server-side.</span></span>
+<span class="ctag">CASB · HAR</span>
+<span aria-hidden="true" class="carrow"><svg viewbox="0 0 24 24"><path d="M6 9l6 6 6-6"></path></svg></span>
+</button>
+<div class="cwrap" id="case-03-body">
+<div class="cbody">
+<div class="figs"><span class="fig"><b>23 MB</b><span>HAR parsed</span></span><span class="fig"><b>1</b><span>endpoint serves every action</span></span></div>
+<div class="cbgrid"><div class="cb"><b>Symptom</b><p>DLP correctly blocked sensitive webmail sends, but the same content could then be opened as a draft from any unmanaged device — a clean bypass of the control.</p></div><div class="cb"><b>Investigation</b><p>Parsed a 23 MB HAR capture of a compose session and traced the auto-save behaviour: debounced POSTs persist the draft — subject, body, recipient — to the provider's servers while the user is still typing, long before any send action.</p></div><div class="cb"><b>Root cause</b><p>The provider routes drafts, sends, archiving, and labeling through one universal sync mutation endpoint. Nothing in the URL distinguishes a draft-save from a send, so a URL-level block would break the entire mail app.</p></div><div class="cb"><b>Fix</b><p>Content-aware inspection of the POST payload body regardless of draft/send state — plus an honest architectural finding: the residual gap (corporate accounts on unmanaged devices) needs identity-layer controls, not endpoint DLP alone.</p></div></div>
+<div class="cfoot"><button class="copyl" type="button">Copy link</button></div>
+</div>
+</div>
+</article>
+<article class="case" data-cat="dlp" data-k="smtp email dlp office 365 exchange online inbound connector tls certificate attr35 451 relay" id="case-04">
+<button aria-controls="case-04-body" aria-expanded="false" class="chead" type="button">
+<span class="cnum">04</span>
+<span class="cmeta"><span class="ct">Email DLP's return path, rejected by Exchange</span><span class="teaser">Inspected mail bounced with "wrong Office 365 region" — the error text was lying.</span></span>
+<span class="ctag">Email DLP</span>
+<span aria-hidden="true" class="carrow"><svg viewbox="0 0 24 24"><path d="M6 9l6 6 6-6"></path></svg></span>
+</button>
+<div class="cwrap" id="case-04-body">
+<div class="cbody">
+<div class="figs"><span class="fig"><b>451 4.4.62</b><span>SMTP rejection code</span></span><span class="fig"><b>2</b><span>connectors to reconcile</span></span></div>
+<div class="cbgrid"><div class="cb"><b>Symptom</b><p>With SMTP Email DLP inline, outbound mail failed with <code>451 4.4.62 … ATTR35</code> — "mail sent to the wrong Office 365 region."</p></div><div class="cb"><b>Investigation</b><p>Traced the full mail flow: Exchange Online hands mail to the DLP proxy correctly; the failure is on the return leg, where the proxy hands inspected mail back for final delivery. The rejection string held the real clue: <code>ValidationStatus of '' is EmptyCertificate</code>.</p></div><div class="cb"><b>Root cause</b><p>Exchange Online couldn't attribute the returning session to the tenant — the inbound connector wasn't matching the TLS client certificate the proxy presented, so the session was treated as anonymous relay and refused.</p></div><div class="cb"><b>Fix</b><p>Align the inbound connector's certificate identification with the certificate name the proxy actually presents (verified via SNI in the logs), with the loop-prevention transport rule confirmed in place so inspected mail isn't re-steered infinitely.</p></div></div>
+<div class="cfoot"><button class="copyl" type="button">Copy link</button></div>
+</div>
+</div>
+</article></section>
+<section class="case-cluster" data-cluster="epdlp"><div class="cluster-head"><span>Endpoint DLP</span><b>02</b></div><article class="case" data-cat="epdlp" data-k="printer print driver spooler kernel hook class wsd tcp ip port content control policy silent failure" id="case-05">
+<button aria-controls="case-05-body" aria-expanded="false" class="chead" type="button">
+<span class="cnum">05</span>
+<span class="cmeta"><span class="ct">Same policy, two PCs, one silent failure</span><span class="teaser">An identical print-control policy blocked on one machine and did nothing on another.</span></span>
+<span class="ctag">EPDLP</span>
+<span aria-hidden="true" class="carrow"><svg viewbox="0 0 24 24"><path d="M6 9l6 6 6-6"></path></svg></span>
+</button>
+<div class="cwrap" id="case-05-body">
+<div class="cbody">
+<div class="figs"><span class="fig"><b>6</b><span>enforcement stages traced</span></span><span class="fig"><b>2</b><span>machines compared</span></span></div>
+<div class="cbgrid"><div class="cb"><b>Symptom</b><p>A printer content-control policy with a DLP profile triggered and blocked correctly on one PC but failed silently on a colleague's — same policy, same user group, same printer fleet.</p></div><div class="cb"><b>Investigation</b><p>Traced the full enforcement chain in system logs on both machines: policy load → directory group resolution → kernel hook interception → PDF spool capture → cloud DLP scan → block action. On the working machine every stage fired; on the broken one, no print job ever reached the interception stage.</p></div><div class="cb"><b>Root cause</b><p>Print driver architecture. The working PC used a v4 class driver over WSD — a path the endpoint hook intercepts. The failing PC used a vendor v3 universal driver on a direct TCP/IP port, which pushes raw page data past the spool stage the hook captures.</p></div><div class="cb"><b>Fix</b><p>Re-provision the affected printer on the v4 class driver path, confirming the theory without waiting on another log round — turning "DLP is broken" into a driver-standardization action.</p></div></div>
+<div class="cfoot"><button class="copyl" type="button">Copy link</button></div>
+</div>
+</div>
+</article>
+<article class="case" data-cat="epdlp" data-k="usb removable device autorun kernel hold timeout 0x102 content control exclusion encrypted drive" id="case-06">
+<button aria-controls="case-06-body" aria-expanded="false" class="chead" type="button">
+<span class="cnum">06</span>
+<span class="cmeta"><span class="ct">USB devices frozen for exactly 120 seconds</span><span class="teaser">Encrypted drives and conferencing devices hung on insert — and every obvious fix targeted the wrong layer.</span></span>
+<span class="ctag">EPDLP · Kernel</span>
+<span aria-hidden="true" class="carrow"><svg viewbox="0 0 24 24"><path d="M6 9l6 6 6-6"></path></svg></span>
+</button>
+<div class="cwrap" id="case-06-body">
+<div class="cbody">
+<div class="figs"><span class="fig"><b>120 s</b><span>hold deadline</span></span><span class="fig"><b>0x102</b><span>STATUS_TIMEOUT</span></span><span class="fig"><b>69</b><span>hold events logged</span></span></div>
+<div class="cbgrid"><div class="cb"><b>Symptom</b><p>Two separate cases: a USB conferencing device and a hardware-encrypted USB drive whose launcher apps took minutes to start — or never started — with the endpoint agent enabled.</p></div><div class="cb"><b>Investigation</b><p>Kernel logs showed the launcher volumes marked controlled and frozen, with every file-open held pending a policy verdict that never arrived — each hold expiring at <code>STATUS_TIMEOUT (0x102)</code> after the 120-second deadline. Explained why the admin's device-control allow rules and app-exclusion lists couldn't help: those act on a different enforcement layer than the content-control hold.</p></div><div class="cb"><b>Root cause</b><p>No content control policy existed at all. With nothing to evaluate held opens against, the policy engine never produced a verdict, so every open on a frozen volume defaulted to the full timeout.</p></div><div class="cb"><b>Fix</b><p>Create a content control policy covering removable-device activity. The engine then returned prompt safe-to-open verdicts and holds released instantly — reframing a suspected product defect as a configuration gap, with the layer-by-layer reasoning documented for future cases.</p></div></div>
+<div class="cfoot"><button class="copyl" type="button">Copy link</button></div>
+</div>
+</div>
+</article></section>
+<section class="case-cluster" data-cluster="client"><div class="cluster-head"><span>Client / Traffic Steering</span><b>06</b></div><article class="case" data-cat="client" data-k="fail close deadlock on-prem detection egress ip gslb pac dns steering network change office lan" id="case-07">
+<button aria-controls="case-07-body" aria-expanded="false" class="chead" type="button">
+<span class="cnum">07</span>
+<span class="cmeta"><span class="ct">The office network that locked itself out</span><span class="teaser">Plugging into the corporate LAN killed the internet — a fail-close deadlock with no way back in.</span></span>
+<span class="ctag">Steering</span>
+<span aria-hidden="true" class="carrow"><svg viewbox="0 0 24 24"><path d="M6 9l6 6 6-6"></path></svg></span>
+</button>
+<div class="cwrap" id="case-07-body">
+<div class="cbody">
+<div class="figs"><span class="fig"><b>166</b><span>resolution failures</span></span><span class="fig"><b>0</b><span>successful on-prem detections</span></span><span class="fig"><b>24</b><span>off-prem detections</span></span></div>
+<div class="cbgrid"><div class="cb"><b>Symptom</b><p>Users joining the office wired LAN lost all internet access, with the client showing "Disabled due to network change." Cycling through a different Wi-Fi network temporarily cured it.</p></div><div class="cb"><b>Investigation</b><p>Debug-log forensics: 166 hostname-resolution failures against the geo-load-balancer service, zero successful on-prem detections, PAC auto-detection errors, and fail-close active — cross-referenced into one causal chain.</p></div><div class="cb"><b>Root cause</b><p>A self-reinforcing deadlock. Egress-IP on-prem detection needs to reach a cloud service over the internet; the office only allows internet via an SSL-inspecting proxy; the client queries that service directly. Detection fails → client assumes off-prem → tunnel can't establish → fail-close blocks all traffic — including the detection traffic that would break the loop.</p></div><div class="cb"><b>Fix</b><p>Switch on-prem detection to a DNS-based method using an internal-only FQDN — removing the internet dependency entirely — with firewall allowlisting excluded from SSL inspection (required by certificate pinning) as the fallback design.</p></div></div>
+<div class="cfoot"><button class="copyl" type="button">Copy link</button></div>
+</div>
+</div>
+</article>
+<article class="case" data-cat="client" data-k="office share dialog slow webview2 doh dns over https dtls mtu zombie connection pooled tunnel tls fallback pcap" id="case-08">
+<button aria-controls="case-08-body" aria-expanded="false" class="chead" type="button">
+<span class="cnum">08</span>
+<span class="cmeta"><span class="ct">The 60-second Share button</span><span class="teaser">Office's Share dialog crawled for one user — and the obvious suspect turned out to be a lab artifact.</span></span>
+<span class="ctag">DTLS · pcap</span>
+<span aria-hidden="true" class="carrow"><svg viewbox="0 0 24 24"><path d="M6 9l6 6 6-6"></path></svg></span>
+</button>
+<div class="cwrap" id="case-08-body">
+<div class="cbody">
+<div class="figs"><span class="fig"><b>59–125 s</b><span>first-byte stalls</span></span><span class="fig"><b>6</b><span>tunnel rebuilds per hour</span></span><span class="fig"><b>1350</b><span>configured tunnel MTU</span></span></div>
+<div class="cbgrid"><div class="cb"><b>Symptom</b><p>The Share pane in Excel and other Office apps took 30–60 seconds to load with the client enabled — 3–5 seconds without it. One user affected, a colleague on identical policy unaffected.</p></div><div class="cb"><b>Investigation</b><p>Lab replication first pointed at the embedded browser control silently upgrading DNS to DNS-over-HTTPS — real behaviour, but I proved it was an artifact of the lab's public-DNS config, not the customer's environment. Production captures told the real story: pooled connections returning zero bytes for 59–125 seconds, repeated DTLS MTU write failures, and six tunnel re-establishments in one hour versus once in 2.5 hours for the healthy user.</p></div><div class="cb"><b>Root cause</b><p>Zombie connections — the app held pooled flows whose gateway-side state had silently died, a consequence of DTLS/UDP path-MTU fragility, with no session-not-found notification enabled to tell the client.</p></div><div class="cb"><b>Fix</b><p>Switch the tunnel protocol from DTLS to TLS for a scoped test group — fixing the real root cause with zero loss of inspection coverage, after showing why IP bypasses (too narrow) and process bypasses (coverage sacrifice) were the wrong trades.</p></div></div>
+<div class="cfoot"><button class="copyl" type="button">Copy link</button></div>
+</div>
+</div>
+</article>
+<article class="case" data-cat="client" data-k="docker push wsl2 virtioproxy registry slow bypass private ip segmentation offload multiple agents multivendor stacked inspection" id="case-09">
+<button aria-controls="case-09-body" aria-expanded="false" class="chead" type="button">
+<span class="cnum">09</span>
+<span class="cmeta"><span class="ct">Docker push at one-third speed</span><span class="teaser">Bypassed traffic was still slow — because three security agents were stacked on one machine.</span></span>
+<span class="ctag">WSL2 · pcap</span>
+<span aria-hidden="true" class="carrow"><svg viewbox="0 0 24 24"><path d="M6 9l6 6 6-6"></path></svg></span>
+</button>
+<div class="cwrap" id="case-09-body">
+<div class="cbody">
+<div class="figs"><span class="fig"><b>3</b><span>inspection agents stacked</span></span><span class="fig"><b>13 vs 40</b><span>Mbit/s with vs without</span></span></div>
+<div class="cbgrid"><div class="cb"><b>Symptom</b><p>Container image pushes from WSL2 to an internal registry took 5–10 minutes with the client enabled — near-instant without — even though the traffic was private-IP bypassed and the process had a cert-pinned bypass rule.</p></div><div class="cb"><b>Investigation</b><p>Debug logs confirmed the bypass decisions were correct and captures proved the flows never entered the tunnel — so it wasn't steering. A network-state dump then revealed three simultaneous inline inspection products on the host, each with kernel packet drivers; capture analysis pointed at segmentation-offload suppression taxing even bypassed flows.</p></div><div class="cb"><b>Root cause</b><p>Datapath cost, not policy: bypassed traffic still crosses the kernel driver stack, and with three vendors' filter drivers loaded the per-packet cost compounded — the binary "client on/off" test had unfairly attributed the whole cost to one product.</p></div><div class="cb"><b>Fix</b><p>An isolation test plan disabling one inspector at a time to find the dominant cost, matching process exclusions across <em>all</em> products (verified against the actual socket-owning process, not the assumed one), and a corrected RCA replacing an earlier no-op recommendation.</p></div></div>
+<div class="cfoot"><button class="copyl" type="button">Copy link</button></div>
+</div>
+</div>
+</article>
+<article class="case" data-cat="client" data-k="macos client disabled keychain certificate npa tunnel errored edr quarantine credential deletion golden release regression" id="case-10">
+<button aria-controls="case-10-body" aria-expanded="false" class="chead" type="button">
+<span class="cnum">10</span>
+<span class="cmeta"><span class="ct">The client that wouldn't come back</span><span class="teaser">A macOS client died the same week as a major release — but the release was innocent.</span></span>
+<span class="ctag">macOS · NPA</span>
+<span aria-hidden="true" class="carrow"><svg viewbox="0 0 24 24"><path d="M6 9l6 6 6-6"></path></svg></span>
+</button>
+<div class="cwrap" id="case-10-body">
+<div class="cbody">
+<div class="figs"><span class="fig"><b>4</b><span>log files correlated</span></span><span class="fig"><b>2 min</b><span>window of credential loss</span></span><span class="fig"><b>95 MB</b><span>moved before failure</span></span></div>
+<div class="cbgrid"><div class="cb"><b>Symptom</b><p>A user's macOS client became fully disabled and unresponsive to re-enable attempts from both the admin console and the endpoint — escalated as a possible regression in a just-shipped golden release.</p></div><div class="cb"><b>Investigation</b><p>Forensic timeline across four log files: reconstructed the upgrade to the minute, then traced ZTNA tunnel state from healthy (~95 MB transferred) to errored via cert-refresh failures — every credential file returning file-not-found, keychain lookups failing — all starting in one precise two-minute window, days after the upgrade.</p></div><div class="cb"><b>Root cause</b><p>External deletion of the client's on-disk credential and certificate state plus its keychain items, with the host's third-party EDR remediation as the leading explanation. A later network-interface flapping event killed the coasting tunnel, which had masked the original loss.</p></div><div class="cb"><b>Fix</b><p>Separated the two failures, cleared the release as a cause, and pinpointed the exact log lines, PIDs, and timestamps behind each conclusion — turning a release-blocking escalation into an endpoint remediation and EDR-exclusion action, plus a cohort grep to formally clear the release group.</p></div></div>
+<div class="cfoot"><button class="copyl" type="button">Copy link</button></div>
+</div>
+</div>
+</article>
+<article class="case" data-cat="client" data-k="vdi rds greyed out icon ui memory commitment limit wmi hardware id aes decrypt roaming profile terminal server" id="case-11">
+<button aria-controls="case-11-body" aria-expanded="false" class="chead" type="button">
+<span class="cnum">11</span>
+<span class="cmeta"><span class="ct">The greyed-out icon on a working tunnel</span><span class="teaser">The UI said security was off. Traffic said otherwise — and both were telling the truth.</span></span>
+<span class="ctag">VDI · WMI</span>
+<span aria-hidden="true" class="carrow"><svg viewbox="0 0 24 24"><path d="M6 9l6 6 6-6"></path></svg></span>
+</button>
+<div class="cwrap" id="case-11-body">
+<div class="cbody">
+<div class="figs"><span class="fig"><b>~19</b><span>concurrent sessions</span></span><span class="fig"><b>0x800705af</b><span>commit limit reached</span></span><span class="fig"><b>2</b><span>symptoms, one cause</span></span></div>
+<div class="cbgrid"><div class="cb"><b>Symptom</b><p>On a pooled VDI/RDS session host, the client's Internet Security icon greyed out for all users — yet browsing was still steered and policy blocks still enforced, so protection was demonstrably working.</p></div><div class="cb"><b>Investigation</b><p>Cross-referenced the UI process log against the service log and found host memory commit exhaustion, which had left the system management service unresponsive. That broke the client's ability to read BIOS serial and CPU ID, so it couldn't derive a stable hardware ID — and without it, decryption of the per-user encrypted credential store failed.</p></div><div class="cb"><b>Root cause</b><p>The UI re-reads that encrypted store on every redraw, so it greyed out; the background service kept its cached tunnel state and carried on steering. One host-level resource problem, two very different symptoms. The registry fallback for hardware ID had been stripped from the VDI image, leaving no backup path.</p></div><div class="cb"><b>Fix</b><p>Drain and reboot the host as the immediate fix, then commit/page-file sizing work with the platform team for ~19 concurrent sessions — plus a product request for a hardware-ID fallback where the management service is unavailable and the registry value is absent.</p></div></div>
+<div class="cfoot"><button class="copyl" type="button">Copy link</button></div>
+</div>
+</div>
+</article>
+<article class="case" data-cat="client" data-k="cors preflight options npa ztna explicit proxy pac base64 managed browser publisher origin header nonstandard port narrowing" id="case-12">
+<button aria-controls="case-12-body" aria-expanded="false" class="chead" type="button">
+<span class="cnum">12</span>
+<span class="cmeta"><span class="ct">The CORS failure that wasn't a steering failure</span><span class="teaser">A private app broke on a non-standard port — and everyone assumed the port wasn't published.</span></span>
+<span class="ctag">ZTNA · CORS</span>
+<span aria-hidden="true" class="carrow"><svg viewbox="0 0 24 24"><path d="M6 9l6 6 6-6"></path></svg></span>
+</button>
+<div class="cwrap" id="case-12-body">
+<div class="cbody">
+<div class="figs"><span class="fig"><b>3</b><span>overlapping app definitions found</span></span><span class="fig"><b>2</b><span>candidates left standing</span></span><span class="fig"><b>1</b><span>command to settle it</span></span></div>
+<div class="cbgrid"><div class="cb"><b>Symptom</b><p>A BI dashboard published through ZTNA failed to load an embedded forms component, with the browser reporting CORS errors against an API on a non-standard port. The working theory was that the port wasn't published as an app, so traffic was going direct or to the wrong proxy.</p></div><div class="cb"><b>Investigation</b><p>Decoded the base64-encoded PAC script embedded in the managed browser's policy export and found the host published three times — on 443, on the API port, and a third overlapping definition — all routing to the ZTNA explicit proxy. The HAR then showed the preflight requests on that port carrying the injected ZTNA auth headers and returning genuine 200s, proving they reached a real backend.</p></div><div class="cb"><b>Root cause</b><p>Not steering. The browser and client layers were exonerated outright, leaving exactly two candidates, both server-side of the proxy: the data path answering the preflight itself or altering the Origin header before the backend saw it, or the backend's own CORS allow-list missing the app origin.</p></div><div class="cb"><b>Fix</b><p>Rather than guess between them, I defined the decisive test — run the preflight from the publisher host straight at the backend, bypassing the gateway — which separates the two in a single command. Also flagged the duplicate app definitions for cleanup, while noting first-PAC-match-wins meant they caused no functional harm here.</p></div></div>
+<div class="cfoot"><button class="copyl" type="button">Copy link</button></div>
+</div>
+</div>
+</article></section>
+<section class="case-cluster" data-cluster="web"><div class="cluster-head"><span>Web / Access / Threat</span><b>08</b></div><article class="case" data-cat="web" data-k="bank login sms step up mfa device fingerprint threatmetrix egress ip split bypass har risk engine" id="case-13">
+<button aria-controls="case-13-body" aria-expanded="false" class="chead" type="button">
+<span class="cnum">13</span>
+<span class="cmeta"><span class="ct">The bank login that demanded SMS every time</span><span class="teaser">The bank's domains were bypassed correctly — but the login broke anyway.</span></span>
+<span class="ctag">SSL · HAR</span>
+<span aria-hidden="true" class="carrow"><svg viewbox="0 0 24 24"><path d="M6 9l6 6 6-6"></path></svg></span>
+</button>
+<div class="cwrap" id="case-13-body">
+<div class="cbody">
+<div class="figs"><span class="fig"><b>2</b><span>HAR captures compared</span></span><span class="fig"><b>1</b><span>uncovered third-party domain</span></span></div>
+<div class="cbgrid"><div class="cb"><b>Symptom</b><p>Users logging into a US regional bank's portal were forced into SMS step-up verification whenever the client was enabled — despite an existing bypass covering all the bank's own domains.</p></div><div class="cb"><b>Investigation</b><p>Compared working and failing HAR captures from the same user and device: the failing session received an explicit step-up challenge from the auth API. Debug logs showed the bank's domains correctly bypassed — while the third-party device-fingerprinting service the login depends on was being tunneled through the proxy.</p></div><div class="cb"><b>Root cause</b><p>Split egress: the device fingerprint and the auth request reached the bank from different public IPs, so its risk engine flagged every session as untrusted and demanded step-up.</p></div><div class="cb"><b>Fix</b><p>Extend the bypass to the fingerprinting domains, with verification defined up front: confirm the new bypass entries appear in the debug log and the step-up challenge disappears from fresh captures.</p></div></div>
+<div class="cfoot"><button class="copyl" type="button">Copy link</button></div>
+</div>
+</div>
+</article>
+<article class="case" data-cat="web" data-k="mdm devicemanagement device sync certificate mutual tls ssl decryption bypass 404 0x80190194 devicegateway endpoint" id="case-14">
+<button aria-controls="case-14-body" aria-expanded="false" class="chead" type="button">
+<span class="cnum">14</span>
+<span class="cmeta"><span class="ct">Device management sync that bypassed the wrong domain</span><span class="teaser">The customer followed the vendor doc exactly — and bypassed a domain the flow never touches.</span></span>
+<span class="ctag">SSL bypass</span>
+<span aria-hidden="true" class="carrow"><svg viewbox="0 0 24 24"><path d="M6 9l6 6 6-6"></path></svg></span>
+</button>
+<div class="cwrap" id="case-14-body">
+<div class="cbody">
+<div class="figs"><span class="fig"><b>0x80190194</b><span>404 on device check-in</span></span><span class="fig"><b>1</b><span>wrong domain bypassed</span></span></div>
+<div class="cbgrid"><div class="cb"><b>Symptom</b><p>MDM device sync failed with <code>0x80190194</code> (404) on protected endpoints, even though the customer had already added the authentication endpoint named in the vendor's documentation to their steering exception list.</p></div><div class="cb"><b>Investigation</b><p>Read the actual failing request in the device's reported management server address — it targets the device gateway, not the authentication domain that had been bypassed. That domain only serves consumer account sign-in, so bypassing it changed nothing for this flow.</p></div><div class="cb"><b>Root cause</b><p>Device check-in authenticates with the MDM device certificate over mutual TLS. When the proxy decrypts the session it terminates TLS and cannot present the device's client certificate, so the request arrives unauthenticated and the gateway answers 404. The vendor explicitly does not support inspection on these endpoints.</p></div><div class="cb"><b>Fix</b><p>Bypass the device-management and device-gateway domain families from SSL inspection using wildcards, since subdomains are involved — with the vendor's own endpoint documentation cited so the customer could take the change through their approval process.</p></div></div>
+<div class="cfoot"><button class="copyl" type="button">Copy link</button></div>
+</div>
+</div>
+</article>
+<article class="case" data-cat="web" data-k="remote browser isolation rbi read only hostingplatform edge security checkpoint challenge 429 egress ip rate limit websocket har wasm" id="case-15">
+<button aria-controls="case-15-body" aria-expanded="false" class="chead" type="button">
+<span class="cnum">15</span>
+<span class="cmeta"><span class="ct">The isolated site stuck on "verifying your browser"</span><span class="teaser">I had a confident first hypothesis. The captures proved me wrong.</span></span>
+<span class="ctag">RBI · HAR</span>
+<span aria-hidden="true" class="carrow"><svg viewbox="0 0 24 24"><path d="M6 9l6 6 6-6"></path></svg></span>
+</button>
+<div class="cwrap" id="case-15-body">
+<div class="cbody">
+<div class="figs"><span class="fig"><b>429</b><span>rate-limit status</span></span><span class="fig"><b>3 min</b><span>from cache hit to challenge</span></span><span class="fig"><b>1</b><span>hypothesis corrected</span></span></div>
+<div class="cbgrid"><div class="cb"><b>Symptom</b><p>Users opening a market-news site through Remote Browser Isolation in read-only mode were stuck on a "verifying your browser" interstitial instead of the content — plus a secondary ask to disable the site's chat feature for those users.</p></div><div class="cb"><b>Investigation</b><p>My first read was a CDN JavaScript challenge conflicting with read-only input suppression. Parsing the working and failing HAR captures corrected it: the challenge came from the site's <em>hosting platform</em> edge, identified by its mitigation response header, a 429 status, and WASM proof-of-work assets. Both captures showed the challenge firing without isolation in the request chain at all.</p></div><div class="cb"><b>Root cause</b><p>The hosting platform's edge rate-limits by source IP, and shared proxy egress tripped it — three minutes after a clean cached session from the same machine. Not an isolation misconfiguration.</p></div><div class="cb"><b>Fix</b><p>Site-side egress allowlisting as the durable answer, with isolation-template alternatives assessed as fallbacks. For the chat requirement I identified the exact API endpoint to block — and flagged the WebSocket that must stay open, because it carries the live market feed alongside the chat data.</p></div></div>
+<div class="cfoot"><button class="copyl" type="button">Copy link</button></div>
+</div>
+</div>
+</article>
+<article class="case" data-cat="web" data-k="webmail incognito browser profile session state cookies identity consistency sso not the proxy exoneration har" id="case-16">
+<button aria-controls="case-16-body" aria-expanded="false" class="chead" type="button">
+<span class="cnum">16</span>
+<span class="cmeta"><span class="ct">The one where the answer was "it isn't us"</span><span class="teaser">Webmail failed in the normal browser profile, worked in incognito — with the client on in both.</span></span>
+<span class="ctag">HAR · SSO</span>
+<span aria-hidden="true" class="carrow"><svg viewbox="0 0 24 24"><path d="M6 9l6 6 6-6"></path></svg></span>
+</button>
+<div class="cwrap" id="case-16-body">
+<div class="cbody">
+<div class="figs"><span class="fig"><b>11 MB</b><span>HAR parsed</span></span><span class="fig"><b>18 vs 1</b><span>identity headers sent vs answered</span></span></div>
+<div class="cbgrid"><div class="cb"><b>Symptom</b><p>A user couldn't load corporate webmail in their normal browser profile, but the same account worked immediately in an incognito window — with the security client active in both cases, which pointed suspicion straight at the proxy.</p></div><div class="cb"><b>Investigation</b><p>Parsed an 11 MB HAR of the failing session: interactive sign-in succeeded, but the passive single-sign-on handoff aborted and bounced to the account chooser, and a cross-service session endpoint returned 400. The browser's identity-consistency request header appeared on 18 requests with only one matching response — a clear session-state mismatch. Every request to the identity endpoints returned a genuine response, so nothing was being blocked.</p></div><div class="cb"><b>Root cause</b><p>Stale and conflicting session state inside the browser profile — exactly what incognito sidesteps with a clean cookie jar, no extensions, and no browser-level identity enforcement.</p></div><div class="cb"><b>Fix</b><p>Profile cookie/cache reset (or a fresh profile), reconciling the browser sign-in identity with the web account, and extension isolation to pin any interference — while still running the security-side hygiene checks (identity domains on do-not-decrypt, tenant-restriction allowlist) so the product was formally cleared rather than just assumed innocent.</p></div></div>
+<div class="cfoot"><button class="copyl" type="button">Copy link</button></div>
+</div>
+</div>
+</article>
+<article class="case" data-cat="web" data-k="ips threat protection notification block page test eicar nids c2 beacon validation lab enablement tenant" id="case-17">
+<button aria-controls="case-17-body" aria-expanded="false" class="chead" type="button">
+<span class="cnum">17</span>
+<span class="cmeta"><span class="ct">Proving the block page works, without any malware</span><span class="teaser">Validating threat controls end to end using only harmless, industry-standard test artifacts.</span></span>
+<span class="ctag">IPS · Validation</span>
+<span aria-hidden="true" class="carrow"><svg viewbox="0 0 24 24"><path d="M6 9l6 6 6-6"></path></svg></span>
+</button>
+<div class="cwrap" id="case-17-body">
+<div class="cbody">
+<div class="figs"><span class="fig"><b>2</b><span>test vectors</span></span><span class="fig"><b>0</b><span>real malware used</span></span></div>
+<div class="cbgrid"><div class="cb"><b>Requirement</b><p>Verify that a tenant's IPS/threat notification page actually renders for users after enabling the feature — mimicking command-and-control and intrusion traffic without touching real malware or standing up a real C2 server.</p></div><div class="cb"><b>Investigation</b><p>Separated two things that get conflated: rendering the user-facing block page versus generating a backend alert. Response-side signatures raise alerts but won't necessarily produce a block page, so a single test can pass while the thing you care about goes unverified.</p></div><div class="cb"><b>Approach</b><p>A layered plan: the industry-standard harmless anti-malware test file to exercise the block page on download, and a safe public NIDS test endpoint over plain HTTP to generate alerts — the plaintext path deliberately isolating whether SSL decryption is itself the problem.</p></div><div class="cb"><b>Outcome</b><p>A repeatable validation runbook with the exact console views for confirming each result, so the customer could evidence coverage rather than assume it.</p></div></div>
+<div class="cfoot"><button class="copyl" type="button">Copy link</button></div>
+</div>
+</div>
+</article>
+<article class="case" data-cat="web" data-k="threat protection malware scan block page download access denied hold and scan direct response header unscannable max file size page events" id="case-18">
+<button aria-controls="case-18-body" aria-expanded="false" class="chead" type="button">
+<span class="cnum">18</span>
+<span class="cmeta"><span class="ct">Downloads blocked by a scan that logged nothing</span><span class="teaser">"Access Denied" on a file export, and the console showed no block at all.</span></span>
+<span class="ctag">Threat Protection</span>
+<span aria-hidden="true" class="carrow"><svg viewbox="0 0 24 24"><path d="M6 9l6 6 6-6"></path></svg></span>
+</button>
+<div class="cwrap" id="case-18-body">
+<div class="cbody">
+<div class="figs"><span class="fig"><b>~2.1 s</b><span>wait before the 403</span></span><span class="fig"><b>2</b><span>HARs compared</span></span><span class="fig"><b>0</b><span>events in the obvious view</span></span></div>
+<div class="cbgrid"><div class="cb"><b>Symptom</b><p>After a malware scanning policy went live, users of a supplier portal got an "Access Denied" page instead of a file from one export endpoint — while a sibling export endpoint kept working. Nothing appeared in the console view the admin was checking.</p></div><div class="cb"><b>Investigation</b><p>Compared working and failing HAR captures. The failing response carried the proxy's own direct-response header and block-page template with no origin server headers at all — while a favicon request in the very same capture returned genuine origin headers, proving the proxy generated the block rather than the site. Timing was the giveaway: about 2.1 seconds of wait before the 403, meaning the file was fetched from origin first and then blocked.</p></div><div class="cb"><b>Root cause</b><p>That delay is the signature of hold-and-scan threat protection, not a pre-fetch policy block. One endpoint's generated file was hitting either a false-positive verdict or the unscannable / max-size action, while its sibling passed the same scan.</p></div><div class="cb"><b>Fix</b><p>Explained the empty console first: these blocks land under alerts and page events, not application events — and size-exceeded or unscannable actions raise no malware alert whatsoever. Then a path forward: reproduce with an exact timestamp, pull page events filtered on user, domain and URL to name the responsible policy and action, and only then choose between a scoped exception, a higher scan-size threshold, or a changed unscannable action.</p></div></div>
+<div class="cfoot"><button class="copyl" type="button">Copy link</button></div>
+</div>
+</div>
+</article>
+<article class="case" data-cat="web" data-k="ai assistant connector oauth mcp url policy wildcard uuid runtime endpoint governance casb shadow it block surgical" id="case-19">
+<button aria-controls="case-19-body" aria-expanded="false" class="chead" type="button">
+<span class="cnum">19</span>
+<span class="cmeta"><span class="ct">Blocking one feature without blocking the app</span><span class="teaser">Stop users wiring corporate data sources into a public AI assistant — but leave the assistant usable.</span></span>
+<span class="ctag">CASB · Policy</span>
+<span aria-hidden="true" class="carrow"><svg viewbox="0 0 24 24"><path d="M6 9l6 6 6-6"></path></svg></span>
+</button>
+<div class="cwrap" id="case-19-body">
+<div class="cbody">
+<div class="figs"><span class="fig"><b>2</b><span>HARs, mine and the customer's</span></span><span class="fig"><b>3</b><span>endpoint families mapped</span></span><span class="fig"><b>2</b><span>policy layers designed</span></span></div>
+<div class="cbgrid"><div class="cb"><b>Requirement</b><p>A customer wanted to stop users connecting third-party data sources to a public AI assistant, without blocking the assistant itself — so a blunt domain block was off the table from the start.</p></div><div class="cb"><b>Investigation</b><p>Parsed two HAR captures: my own replication, plus the customer's, which captured the full end-to-end flow my replication had missed. Between them I mapped three distinct endpoint families — the OAuth initiation call, the callback that completes a connection, and the runtime endpoint that proxies live connector traffic.</p></div><div class="cb"><b>Design</b><p>A two-layer URL policy: a surgical block on initiation and callback to prevent new connections, plus defense-in-depth on the runtime and directory paths to neutralise existing ones. Organisation IDs and connector UUIDs sit inside the URL paths, so every rule needed wildcard matching to survive real traffic.</p></div><div class="cb"><b>Fix</b><p>Delivered the rule set with two findings that saved effort: third-party OAuth provider domains need no individual blocking once initiation is cut at the assistant's own domain, and admin-side governance on the vendor's enterprise plan would be a more durable control than network blocking alone — worth raising with the customer rather than quietly selling them a policy.</p></div></div>
+<div class="cfoot"><button class="copyl" type="button">Copy link</button></div>
+</div>
+</div>
+</article>
+<article class="case" data-cat="web" data-k="desktop app enablement ports protocols websocket upgrade udp voice webrtc certificate pinning ssl inspection loopback oauth callback allowlist" id="case-20">
+<button aria-controls="case-20-body" aria-expanded="false" class="chead" type="button">
+<span class="cnum">20</span>
+<span class="cmeta"><span class="ct">Getting a new desktop app through the stack</span><span class="teaser">Mapping exactly what an app needs on the wire, before it becomes a ticket.</span></span>
+<span class="ctag">Enablement</span>
+<span aria-hidden="true" class="carrow"><svg viewbox="0 0 24 24"><path d="M6 9l6 6 6-6"></path></svg></span>
+</button>
+<div class="cwrap" id="case-20-body">
+<div class="cbody">
+<div class="figs"><span class="fig"><b>443</b><span>TCP for everything normal</span></span><span class="fig"><b>3478</b><span>UDP for voice media</span></span><span class="fig"><b>0</b><span>inbound ports required</span></span></div>
+<div class="cbgrid"><div class="cb"><b>Requirement</b><p>Determine the full network footprint of a desktop AI client so it could be allowed through proxy and firewall policy cleanly, rather than debugged after rollout.</p></div><div class="cb"><b>Findings</b><p>Everything is outbound only — no inbound listeners. Normal traffic and streaming both ride TCP 443, with streaming needing the WebSocket upgrade handshake permitted rather than just the port opened. Voice prefers UDP 3478 and falls back to 443, so quality complaints usually trace to the UDP path being closed rather than the app misbehaving.</p></div><div class="cb"><b>The gotchas</b><p>Two things break this app specifically under a security stack. Its desktop build validates certificates strictly, so SSL inspection produces a certificate error and forces users back to the web version — the vendor's guidance is a decryption bypass for their domains. And sign-in hands off to the default browser and receives the OAuth callback on a loopback address, so host firewalls that block loopback break login in a way that looks nothing like a network problem.</p></div><div class="cb"><b>Outcome</b><p>A ready-to-apply allowlist covering the app's own domains plus its static-asset, upload, and telemetry dependencies — turning a likely run of confusing tickets into one configuration change.</p></div></div>
+<div class="cfoot"><button class="copyl" type="button">Copy link</button></div>
+</div>
+</div>
+</article></section></div>
+</div></section>
+
+<section class="section" id="skills"><div class="wrap">
+ <div class="section-head"><div><div class="eyebrow">05 / What I Use</div><h2>Core skills & toolkit.</h2></div><p>Click a capability to find the investigations where it appears.</p></div>
+ <div class="skills-grid reveal"><div class="skill-card">
+<h3>Security &amp; SASE</h3>
+<div class="tags">
+<span>Netskope SASE / SSE</span><span data-q="steering">Secure Web Gateway (SWG)</span><span data-q="casb">CASB</span>
+<span data-q="dlp">Inline DLP</span><span data-q="endpoint">Endpoint DLP</span><span data-q="smtp">Email DLP (SMTP)</span><span data-q="npa">Private Access / ZTNA (NPA)</span>
+<span data-q="proxy">Explicit Proxy</span><span data-q="steering">Client &amp; Steering</span><span>Cloud Firewall (CFW)</span>
+<span data-q="ssl">SSL/TLS</span><span>HTTP/HTTPS</span><span data-q="sso">SAML</span><span>User Provisioning</span>
+<span>Microsoft Entra ID</span><span data-q="regex">RE2 Regex Detection Engineering</span><span>REST API (v1 &amp; v2)</span>
+</div>
+</div><div class="skill-card">
+<h3>Networking</h3>
+<div class="tags">
+<span>TCP/IP</span><span data-q="dns">DNS</span><span>DHCP</span><span>ARP</span><span>VPN</span>
+<span>VLAN</span><span>VTP</span><span data-q="proxy">Proxy</span><span data-q="steering">Secure Traffic Forwarding</span>
+<span>QUIC / UDP 443</span><span data-q="dtls">TLS/DTLS</span><span data-q="smtp">SMTP Mail Flow</span><span data-q="cors">CORS</span>
+</div>
+</div><div class="skill-card">
+<h3>Cloud &amp; Systems</h3>
+<div class="tags">
+<span>Microsoft Azure</span><span data-q="vdi">Windows Server (On-Prem &amp; Hybrid)</span>
+<span>Active Directory DS</span><span>Entra ID</span><span data-q="smtp">Exchange Online / M365</span><span data-q="docker">Docker / WSL2</span><span data-q="macos">macOS</span>
+</div>
+</div><div class="skill-card">
+<h3>Tools &amp; Analysis</h3>
+<div class="tags">
+<span data-q="pcap">Wireshark</span><span data-q="pcap">Packet Capture Analysis</span><span data-q="har">HAR Captures</span>
+<span data-q="kernel">Log Analysis</span><span>Live Call Troubleshooting</span>
+</div>
+</div></div>
+</div></section>
+
+<section class="section" id="education"><div class="wrap">
+ <div class="section-head"><div><div class="eyebrow">06 / Foundation</div><h2>Education & credentials.</h2></div><p>The formal layer underneath the troubleshooting habit.</p></div>
+ <div class="edu-grid reveal"><div class="edu-card">
+<span class="dates">2016 — 2021</span>
+<h3>B.E., Computer Engineering</h3>
+<p>University of Kashmir · Srinagar, India<br/>CGPA: 8.21 / 10.0</p>
+</div><div class="edu-card">
+<span class="dates">Certifications</span>
+<h3>Professional credentials</h3>
+<ul>
+<li>Cisco Certified Network Professional (CCNP) — Techboxx</li>
+<li>Netskope certifications — Netskope Academy</li>
+</ul>
+</div></div>
+</div></section>
+
+<section class="contact" id="contact"><div class="wrap">
+ <div class="eyebrow">07 / Contact</div><h2>Let’s talk about<br>hard problems.</h2>
+ <p>Open to conversations around cloud security, enterprise support, Netskope, debugging and what comes next.</p>
+ <div class="actions"><a class="cta primary" href="mailto:sheich.musavir@gmail.com">Email ↗</a><a class="cta" href="https://www.linkedin.com/in/smarfat/" target="_blank" rel="noopener">LinkedIn ↗</a><a class="cta" href="tel:+919906801601">+91 99068 01601</a></div>
+</div></section>
+
+<footer><div class="wrap footer"><span>© 2026 Sheikh Musavir Arfat</span><span>sheikhmusavir.github.io</span></div></footer>
+<button class="to-top" id="topBtn" aria-label="Back to top">↑</button>
+
+<script>
+(()=>{
+"use strict";
+const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
+const root=document.documentElement;
+
+document.getElementById("theme").addEventListener("click",()=>{
+  root.classList.toggle("light");
+});
+
+document.querySelectorAll(".reveal").forEach(el=>{
+  new IntersectionObserver(es=>{
+    es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");}});
+  },{threshold:.12}).observe(el);
+});
+
+// animated hero stats
+document.querySelectorAll("[data-n]").forEach(el=>{
+ const target=parseFloat(el.dataset.n);
+ const io=new IntersectionObserver(es=>{
+  es.forEach(e=>{
+   if(!e.isIntersecting)return;io.unobserve(el);
+   if(reduce){el.textContent=target%1?target.toFixed(1):target;return;}
+   const start=performance.now();
+   function tick(now){const p=Math.min(1,(now-start)/900),v=target*(1-Math.pow(1-p,3));el.textContent=target%1?v.toFixed(1):Math.round(v);if(p<1)requestAnimationFrame(tick);}
+   requestAnimationFrame(tick);
+  });
+ },{threshold:.8});io.observe(el);
+});
+
+// mouse parallax
+const hero=document.querySelector(".hero"), hud=document.getElementById("hud");
+if(hero && !matchMedia("(pointer:coarse)").matches && !reduce){
+ hero.addEventListener("pointermove",e=>{
+  const r=hero.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top;
+  hero.style.setProperty("--mx",(x/r.width*100)+"%");
+  hero.style.setProperty("--my",(y/r.height*100)+"%");
+  if(hud){
+    const dx=(x/r.width-.5),dy=(y/r.height-.5);
+    hud.style.transform=`perspective(1300px) rotateY(${dx*-11}deg) rotateX(${dy*5}deg) translate3d(${dx*5}px,${dy*-4}px,0)`;
+  }
+ });
+ hero.addEventListener("pointerleave",()=>{if(hud)hud.style.transform="perspective(1300px) rotateY(-9deg) rotateX(2deg)"});
+}
+
+// archive filters/search
+const cases=[...document.querySelectorAll(".case")];
+const clusters=[...document.querySelectorAll(".case-cluster")];
+const search=document.getElementById("caseSearch");
+const counter=document.getElementById("caseCount");
+const filters=[...document.querySelectorAll(".filter")];
+let active="all";
+
+function apply(){
+ const q=(search.value||"").trim().toLowerCase();
+ let shown=0;
+ cases.forEach(c=>{
+   const okCat=active==="all"||c.dataset.cat===active;
+   const hay=((c.dataset.k||"")+" "+c.textContent).toLowerCase();
+   const okQ=!q||hay.includes(q);
+   const on=okCat&&okQ;
+   c.style.display=on?"":"none";if(on)shown++;
+ });
+ clusters.forEach(cl=>{
+   const visible=[...cl.querySelectorAll(".case")].some(c=>c.style.display!=="none");
+   cl.style.display=visible?"":"none";
+ });
+ counter.innerHTML=`Showing <b>${shown}</b> of ${cases.length} investigations`;
+}
+filters.forEach(f=>f.addEventListener("click",()=>{
+ active=f.dataset.filter;filters.forEach(x=>x.classList.toggle("active",x===f));search.value="";apply();
+}));
+search.addEventListener("input",apply);
+
+// platform module links
+document.querySelectorAll(".module-link").forEach(el=>{
+ el.addEventListener("click",()=>{
+   const cat=el.dataset.filter;active=cat;filters.forEach(x=>x.classList.toggle("active",x.dataset.filter===cat));
+   search.value="";apply();document.getElementById("cases").scrollIntoView({behavior:reduce?"auto":"smooth"});
+ });
+});
+
+// searchable skills
+document.querySelectorAll(".tags span[data-q]").forEach(t=>{
+ t.addEventListener("click",()=>{
+   search.value=t.dataset.q||"";active="all";filters.forEach(x=>x.classList.toggle("active",x.dataset.filter==="all"));
+   apply();document.getElementById("cases").scrollIntoView({behavior:reduce?"auto":"smooth"});
+ });
+});
+
+// source cases are expandable; improve accessibility and keep height animation intact.
+cases.forEach(c=>{
+ const head=c.querySelector(".chead"),wrap=c.querySelector(".cwrap"),body=c.querySelector(".cbody");
+ if(head && wrap && body){
+   head.setAttribute("aria-expanded","false");
+   head.addEventListener("click",()=>{
+     const open=c.classList.toggle("open");head.setAttribute("aria-expanded",open?"true":"false");
+     if(open){wrap.style.height=body.offsetHeight+"px";setTimeout(()=>{if(c.classList.contains("open"))wrap.style.height="auto"},420)}
+     else{wrap.style.height=body.offsetHeight+"px";requestAnimationFrame(()=>wrap.style.height="0px")}
+   });
+ }
+});
+
+// keyboard search
+document.addEventListener("keydown",e=>{
+ if(e.key==="/" && document.activeElement!==search){e.preventDefault();search.focus();}
+ if(e.key==="Escape" && document.activeElement===search){search.value="";apply();search.blur();}
+});
+
+// progress / nav / top
+const progress=document.getElementById("progress"),topBtn=document.getElementById("topBtn");
+function scrollUI(){
+ const max=document.documentElement.scrollHeight-innerHeight;
+ progress.style.transform=`scaleX(${max?scrollY/max:0})`;
+ topBtn.classList.toggle("show",scrollY>650);
+ let current="";document.querySelectorAll("section[id]").forEach(s=>{if(s.offsetTop-130<=scrollY)current=s.id});
+ document.querySelectorAll(".links a").forEach(a=>a.classList.toggle("active",a.getAttribute("href")==="#"+current));
+}
+addEventListener("scroll",scrollUI,{passive:true});scrollUI();
+topBtn.addEventListener("click",()=>scrollTo({top:0,behavior:reduce?"auto":"smooth"}));
+
+// keep background video quiet when tab hidden
+document.addEventListener("visibilitychange",()=>{
+ const v=document.querySelector(".hero-video");if(!v)return;
+ if(document.hidden)v.pause();else v.play().catch(()=>{});
+});
+})();
+</script>
+</body>
+</html>
