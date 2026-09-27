@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>CORS preflight failures through Netskope Private Access (ZTNA) | Sheikh Musavir Arfat</title>
+<meta name="description" content="A private app broke on a non-standard port — and everyone assumed the port wasn&#x27;t published. A Netskope case file by Sheikh Musavir Arfat: symptom, investigation, root cause and fix.">
+<meta name="author" content="Sheikh Musavir Arfat">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<link rel="canonical" href="https://sheikhmusavir.github.io/cases/npa-ztna-cors-preflight-nonstandard-port/">
+<meta name="theme-color" content="#F6F7F9">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Sheikh Musavir Arfat">
+<meta property="og:title" content="CORS preflight failures through Netskope Private Access (ZTNA) | Sheikh Musavir Arfat">
+<meta property="og:description" content="A private app broke on a non-standard port — and everyone assumed the port wasn&#x27;t published. A Netskope case file by Sheikh Musavir Arfat: symptom, investigation, root cause and fix.">
+<meta property="og:url" content="https://sheikhmusavir.github.io/cases/npa-ztna-cors-preflight-nonstandard-port/">
+<meta property="og:image" content="https://sheikhmusavir.github.io/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Sheikh Musavir Arfat, Netskope engineer (SSE/SASE)">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="CORS preflight failures through Netskope Private Access (ZTNA) | Sheikh Musavir Arfat">
+<meta name="twitter:description" content="A private app broke on a non-standard port — and everyone assumed the port wasn&#x27;t published. A Netskope case file by Sheikh Musavir Arfat: symptom, investigation, root cause and fix.">
+<meta name="twitter:image" content="https://sheikhmusavir.github.io/og-image.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%230A0C0F'/%3E%3Cpath d='M5 18h6l2.5-8 3.5 14 3-10 1.5 4H27' fill='none' stroke='%2372C6FF' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preload" href="/assets/fonts/instrument-sans.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/site.css">
+<script>try{var t=localStorage.getItem("sma-theme")||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");document.documentElement.setAttribute("data-theme",t);}catch(e){}</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "TechArticle",
+   "@id": "https://sheikhmusavir.github.io/cases/npa-ztna-cors-preflight-nonstandard-port/#article",
+   "headline": "The CORS failure that wasn't a steering failure",
+   "alternativeHeadline": "CORS preflight failures through Netskope Private Access (ZTNA)",
+   "description": "A private app broke on a non-standard port — and everyone assumed the port wasn't published. A Netskope case file by Sheikh Musavir Arfat: symptom, investigation, root cause and fix.",
+   "url": "https://sheikhmusavir.github.io/cases/npa-ztna-cors-preflight-nonstandard-port/",
+   "mainEntityOfPage": "https://sheikhmusavir.github.io/cases/npa-ztna-cors-preflight-nonstandard-port/",
+   "image": "https://sheikhmusavir.github.io/og-image.jpg",
+   "author": {
+    "@type": "Person",
+    "@id": "https://sheikhmusavir.github.io/#person",
+    "name": "Sheikh Musavir Arfat",
+    "url": "https://sheikhmusavir.github.io/"
+   },
+   "publisher": {
+    "@type": "Person",
+    "@id": "https://sheikhmusavir.github.io/#person",
+    "name": "Sheikh Musavir Arfat",
+    "url": "https://sheikhmusavir.github.io/"
+   },
+   "datePublished": "2026-09-14",
+   "dateModified": "2026-09-27",
+   "inLanguage": "en",
+   "articleSection": "Netskope case files · Client and steering",
+   "keywords": "Netskope, SSE, SASE, cors, preflight, options, npa, ztna, explicit, proxy, pac, base64, managed, browser, publisher, origin, header",
+   "about": [
+    {
+     "@type": "Thing",
+     "name": "Netskope"
+    },
+    {
+     "@type": "Thing",
+     "name": "Security Service Edge"
+    }
+   ],
+   "isPartOf": {
+    "@id": "https://sheikhmusavir.github.io/cases/#collection"
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Home",
+     "item": "https://sheikhmusavir.github.io/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Netskope case files",
+     "item": "https://sheikhmusavir.github.io/cases/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "Case 12",
+     "item": "https://sheikhmusavir.github.io/cases/npa-ztna-cors-preflight-nonstandard-port/"
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="/"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="currentColor"/><path d="M5 18h6l2.5-8 3.5 14 3-10 1.5 4H27" fill="none" stroke="var(--bg)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Sheikh Musavir Arfat</a>
+    <nav class="nav" aria-label="Site">
+      <a class="keep" href="/cases/">Case files</a>
+      <a href="/#experience">Experience</a>
+      <a href="/#contact">Contact</a>
+      <button class="tgl" id="theme" type="button" aria-label="Use dark theme"><svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M18.7 5.3l-1.4 1.4M6.7 17.3l-1.4 1.4"/></svg><svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg></button>
+    </nav>
+  </div>
+</header>
+<main class="wrap page">
+<nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><a href="/cases/">Netskope case files</a><span aria-hidden="true">/</span><span aria-current="page">Case 12</span></nav>
+<article class="case">
+  <div class="dmeta"><span class="id">Case 12</span><span>Client and steering</span><span class="kw">CORS preflight failures through Netskope Private Access (ZTNA)</span></div>
+  <h1>The CORS failure that wasn't a steering failure</h1>
+  <p class="lede">A private app broke on a non-standard port — and everyone assumed the port wasn't published.</p>
+  <div class="figs"><div class="fig"><b>3</b><span>overlapping app definitions found</span></div><div class="fig"><b>2</b><span>candidates left standing</span></div><div class="fig"><b>1</b><span>command to settle it</span></div></div>
+  <section class="blk"><h2>Symptom</h2><p>A BI dashboard published through ZTNA failed to load an embedded forms component, with the browser reporting CORS errors against an API on a non-standard port. The working theory was that the port wasn't published as an app, so traffic was going direct or to the wrong proxy.</p></section>
+  <section class="blk"><h2>Investigation</h2><p>Decoded the base64-encoded PAC script embedded in the managed browser's policy export and found the host published three times — on 443, on the API port, and a third overlapping definition — all routing to the ZTNA explicit proxy. The HAR then showed the preflight requests on that port carrying the injected ZTNA auth headers and returning genuine 200s, proving they reached a real backend.</p></section>
+  <section class="blk key"><h2>Root cause</h2><p>Not steering. The browser and client layers were exonerated outright, leaving exactly two candidates, both server-side of the proxy: the data path answering the preflight itself or altering the Origin header before the backend saw it, or the backend's own CORS allow-list missing the app origin.</p></section>
+  <section class="blk"><h2>Fix</h2><p>Rather than guess between them, I defined the decisive test — run the preflight from the publisher host straight at the backend, bypassing the gateway — which separates the two in a single command. Also flagged the duplicate app definitions for cleanup, while noting first-PAC-match-wins meant they caused no functional harm here.</p></section>
+  <p class="dmeta" style="margin-top:1rem">Real investigation from enterprise Netskope support. Customers and vendors are anonymized.</p>
+</article>
+<aside class="author" aria-label="About the author">
+  <img src="/assets/avatar.jpg" alt="Sheikh Musavir Arfat" width="72" height="72" loading="lazy">
+  <div>
+    <b><a href="/">Sheikh Musavir Arfat</a></b>
+    <p>Netskope engineer working across SSE and SASE: SWG, SSL inspection, DLP, Private Access (ZTNA), RBI and threat protection.
+    <a href="https://verify.skilljar.com/c/fjcto4ismk7b" target="_blank" rel="noopener">Netskope Administrator</a> and
+    <a href="https://verify.skilljar.com/c/4edijfvrobxi" target="_blank" rel="noopener">Implementation and Integration</a> certified.
+    Open to Netskope implementation and delivery roles.</p>
+    <div class="ctas">
+      <a class="btn primary" href="mailto:sheich.musavir@gmail.com"><svg viewBox="0 0 16 16" aria-hidden="true"><rect x="1.5" y="3" width="13" height="10" rx="2"/><path d="m2 4 6 5 6-5"/></svg>Email me</a>
+      <a class="btn" href="https://www.linkedin.com/in/smarfat/" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn" href="/cases/">All 20 case files</a>
+    </div>
+  </div>
+</aside>
+<nav class="pn" aria-label="More case files">
+  <a class="prev" href="/cases/netskope-client-vdi-rds-greyed-out-icon/"><small>Previous · Case 11</small><span>The greyed-out icon on a working tunnel</span></a>
+  <a class="next" href="/cases/bank-login-sms-step-up-split-egress-ip/"><small>Next · Case 13</small><span>The bank login that demanded SMS every time</span></a>
+</nav>
+</main>
+<footer><div class="wrap"><span>Sheikh Musavir Arfat · Netskope engineer · SSE/SASE engineer</span><span class="mono"><a href="/">sheikhmusavir.github.io</a></span></div></footer>
+<script>
+(function(){var r=document.documentElement,b=document.getElementById("theme"),m=document.querySelector('meta[name="theme-color"]');
+function set(t,s){r.setAttribute("data-theme",t);b.setAttribute("aria-label",t==="dark"?"Use light theme":"Use dark theme");m.setAttribute("content",t==="dark"?"#0A0C0F":"#F6F7F9");if(s)try{localStorage.setItem("sma-theme",t);}catch(e){}}
+set(r.getAttribute("data-theme")||"light");b.addEventListener("click",function(){set(r.getAttribute("data-theme")==="dark"?"light":"dark",true);});
+var top=document.querySelector(".top");function sc(){top.classList.toggle("scrolled",window.scrollY>8);}window.addEventListener("scroll",sc,{passive:true});sc();})();
+</script>
+</body>
+</html>

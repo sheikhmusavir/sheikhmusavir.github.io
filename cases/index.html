@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Netskope Case Files by Sheikh Musavir Arfat</title>
+<meta name="description" content="20 real Netskope troubleshooting case files by Sheikh Musavir Arfat, Netskope engineer: SWG, SSL inspection, DLP, endpoint DLP, Netskope Client steering, NPA/ZTNA, RBI and threat protection.">
+<meta name="author" content="Sheikh Musavir Arfat">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<link rel="canonical" href="https://sheikhmusavir.github.io/cases/">
+<meta name="theme-color" content="#F6F7F9">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Sheikh Musavir Arfat">
+<meta property="og:title" content="Netskope Case Files by Sheikh Musavir Arfat">
+<meta property="og:description" content="20 real Netskope troubleshooting case files by Sheikh Musavir Arfat, Netskope engineer: SWG, SSL inspection, DLP, endpoint DLP, Netskope Client steering, NPA/ZTNA, RBI and threat protection.">
+<meta property="og:url" content="https://sheikhmusavir.github.io/cases/">
+<meta property="og:image" content="https://sheikhmusavir.github.io/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Sheikh Musavir Arfat, Netskope engineer (SSE/SASE)">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Netskope Case Files by Sheikh Musavir Arfat">
+<meta name="twitter:description" content="20 real Netskope troubleshooting case files by Sheikh Musavir Arfat, Netskope engineer: SWG, SSL inspection, DLP, endpoint DLP, Netskope Client steering, NPA/ZTNA, RBI and threat protection.">
+<meta name="twitter:image" content="https://sheikhmusavir.github.io/og-image.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%230A0C0F'/%3E%3Cpath d='M5 18h6l2.5-8 3.5 14 3-10 1.5 4H27' fill='none' stroke='%2372C6FF' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preload" href="/assets/fonts/instrument-sans.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/site.css">
+<script>try{var t=localStorage.getItem("sma-theme")||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");document.documentElement.setAttribute("data-theme",t);}catch(e){}</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "CollectionPage",
+   "@id": "https://sheikhmusavir.github.io/cases/#collection",
+   "url": "https://sheikhmusavir.github.io/cases/",
+   "name": "Netskope Case Files by Sheikh Musavir Arfat",
+   "description": "20 real Netskope troubleshooting case files by Sheikh Musavir Arfat, Netskope engineer: SWG, SSL inspection, DLP, endpoint DLP, Netskope Client steering, NPA/ZTNA, RBI and threat protection.",
+   "author": {
+    "@type": "Person",
+    "@id": "https://sheikhmusavir.github.io/#person",
+    "name": "Sheikh Musavir Arfat",
+    "url": "https://sheikhmusavir.github.io/"
+   },
+   "isPartOf": {
+    "@id": "https://sheikhmusavir.github.io/#website"
+   },
+   "inLanguage": "en",
+   "dateModified": "2026-09-27",
+   "mainEntity": {
+    "@type": "ItemList",
+    "numberOfItems": 20,
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "url": "https://sheikhmusavir.github.io/cases/aadhaar-dlp-regex-false-positives/",
+      "name": "The national-ID pattern with an 80% noise problem"
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "url": "https://sheikhmusavir.github.io/cases/encrypted-file-dlp-regex-re2-dfa-limits/",
+      "name": "The encrypted file that looked like phone numbers"
+     },
+     {
+      "@type": "ListItem",
+      "position": 3,
+      "url": "https://sheikhmusavir.github.io/cases/webmail-draft-autosave-dlp-bypass/",
+      "name": "The draft that escaped before the block"
+     },
+     {
+      "@type": "ListItem",
+      "position": 4,
+      "url": "https://sheikhmusavir.github.io/cases/smtp-email-dlp-exchange-online-451-4-4-62/",
+      "name": "Email DLP's return path, rejected by Exchange"
+     },
+     {
+      "@type": "ListItem",
+      "position": 5,
+      "url": "https://sheikhmusavir.github.io/cases/endpoint-dlp-print-control-print-driver/",
+      "name": "Same policy, two PCs, one silent failure"
+     },
+     {
+      "@type": "ListItem",
+      "position": 6,
+      "url": "https://sheikhmusavir.github.io/cases/endpoint-dlp-usb-device-120-second-freeze/",
+      "name": "USB devices frozen for exactly 120 seconds"
+     },
+     {
+      "@type": "ListItem",
+      "position": 7,
+      "url": "https://sheikhmusavir.github.io/cases/netskope-client-fail-close-on-prem-detection/",
+      "name": "The office network that locked itself out"
+     },
+     {
+      "@type": "ListItem",
+      "position": 8,
+      "url": "https://sheikhmusavir.github.io/cases/office-share-dialog-slow-dtls-vs-tls-tunnel/",
+      "name": "The 60-second Share button"
+     },
+     {
+      "@type": "ListItem",
+      "position": 9,
+      "url": "https://sheikhmusavir.github.io/cases/slow-docker-push-wsl2-multiple-security-agents/",
+      "name": "Docker push at one-third speed"
+     },
+     {
+      "@type": "ListItem",
+      "position": 10,
+      "url": "https://sheikhmusavir.github.io/cases/macos-netskope-client-disabled-keychain-edr/",
+      "name": "The client that wouldn't come back"
+     },
+     {
+      "@type": "ListItem",
+      "position": 11,
+      "url": "https://sheikhmusavir.github.io/cases/netskope-client-vdi-rds-greyed-out-icon/",
+      "name": "The greyed-out icon on a working tunnel"
+     },
+     {
+      "@type": "ListItem",
+      "position": 12,
+      "url": "https://sheikhmusavir.github.io/cases/npa-ztna-cors-preflight-nonstandard-port/",
+      "name": "The CORS failure that wasn't a steering failure"
+     },
+     {
+      "@type": "ListItem",
+      "position": 13,
+      "url": "https://sheikhmusavir.github.io/cases/bank-login-sms-step-up-split-egress-ip/",
+      "name": "The bank login that demanded SMS every time"
+     },
+     {
+      "@type": "ListItem",
+      "position": 14,
+      "url": "https://sheikhmusavir.github.io/cases/mdm-sync-0x80190194-ssl-inspection-bypass/",
+      "name": "Device management sync that bypassed the wrong domain"
+     },
+     {
+      "@type": "ListItem",
+      "position": 15,
+      "url": "https://sheikhmusavir.github.io/cases/rbi-remote-browser-isolation-verifying-your-browser-429/",
+      "name": "The isolated site stuck on \"verifying your browser\""
+     },
+     {
+      "@type": "ListItem",
+      "position": 16,
+      "url": "https://sheikhmusavir.github.io/cases/webmail-fails-normal-profile-works-incognito/",
+      "name": "The one where the answer was \"it isn't us\""
+     },
+     {
+      "@type": "ListItem",
+      "position": 17,
+      "url": "https://sheikhmusavir.github.io/cases/test-ips-threat-protection-block-page-safely/",
+      "name": "Proving the block page works, without any malware"
+     },
+     {
+      "@type": "ListItem",
+      "position": 18,
+      "url": "https://sheikhmusavir.github.io/cases/download-access-denied-hold-and-scan-threat-protection/",
+      "name": "Downloads blocked by a scan that logged nothing"
+     },
+     {
+      "@type": "ListItem",
+      "position": 19,
+      "url": "https://sheikhmusavir.github.io/cases/block-ai-assistant-connectors-url-policy/",
+      "name": "Blocking one feature without blocking the app"
+     },
+     {
+      "@type": "ListItem",
+      "position": 20,
+      "url": "https://sheikhmusavir.github.io/cases/desktop-ai-app-network-requirements-ssl-inspection/",
+      "name": "Getting a new desktop app through the stack"
+     }
+    ]
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Home",
+     "item": "https://sheikhmusavir.github.io/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Netskope case files",
+     "item": "https://sheikhmusavir.github.io/cases/"
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="/"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="currentColor"/><path d="M5 18h6l2.5-8 3.5 14 3-10 1.5 4H27" fill="none" stroke="var(--bg)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Sheikh Musavir Arfat</a>
+    <nav class="nav" aria-label="Site">
+      <a class="keep" href="/cases/">Case files</a>
+      <a href="/#experience">Experience</a>
+      <a href="/#contact">Contact</a>
+      <button class="tgl" id="theme" type="button" aria-label="Use dark theme"><svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M18.7 5.3l-1.4 1.4M6.7 17.3l-1.4 1.4"/></svg><svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg></button>
+    </nav>
+  </div>
+</header>
+<main class="wrap page">
+<nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><span aria-current="page">Netskope case files</span></nav>
+<div class="case">
+  <h1>Netskope case files</h1>
+  <p class="intro">Twenty real investigations from enterprise Netskope support, written by <a href="/">Sheikh Musavir Arfat</a>, a Netskope engineer working across SSE and SASE. Each one is written as symptom, investigation, root cause and fix. Customers and vendors are anonymized.</p>
+</div>
+<section class="group"><h2>DLP</h2>
+  <ul class="clinks">
+    <li><a href="/cases/aadhaar-dlp-regex-false-positives/"><span class="no">Case 01</span><span class="t">The national-ID pattern with an 80% noise problem</span><span class="d">A customer's Aadhaar regex matched nearly every 12-digit number in their traffic.</span><span class="k">Aadhaar DLP regex false positives under RE2</span></a></li>
+    <li><a href="/cases/encrypted-file-dlp-regex-re2-dfa-limits/"><span class="no">Case 02</span><span class="t">The encrypted file that looked like phone numbers</span><span class="d">Cipher text kept tripping phone-number detection — and every "fix" regex crashed the compiler.</span><span class="k">Detecting cipher files with an RE2-safe DLP regex</span></a></li>
+    <li><a href="/cases/webmail-draft-autosave-dlp-bypass/"><span class="no">Case 03</span><span class="t">The draft that escaped before the block</span><span class="d">Blocking the send wasn't enough — the mail client had already saved the content server-side.</span><span class="k">Webmail draft auto-save as a DLP bypass</span></a></li>
+    <li><a href="/cases/smtp-email-dlp-exchange-online-451-4-4-62/"><span class="no">Case 04</span><span class="t">Email DLP's return path, rejected by Exchange</span><span class="d">Inspected mail bounced with "wrong Office 365 region" — the error text was lying.</span><span class="k">Netskope SMTP Email DLP and Exchange Online 451 4.4.62</span></a></li>
+  </ul>
+</section>
+<section class="group"><h2>Endpoint DLP</h2>
+  <ul class="clinks">
+    <li><a href="/cases/endpoint-dlp-print-control-print-driver/"><span class="no">Case 05</span><span class="t">Same policy, two PCs, one silent failure</span><span class="d">An identical print-control policy blocked on one machine and did nothing on another.</span><span class="k">Endpoint DLP print control and v3 vs v4 print drivers</span></a></li>
+    <li><a href="/cases/endpoint-dlp-usb-device-120-second-freeze/"><span class="no">Case 06</span><span class="t">USB devices frozen for exactly 120 seconds</span><span class="d">Encrypted drives and conferencing devices hung on insert — and every obvious fix targeted the wrong layer.</span><span class="k">Endpoint DLP USB device freeze and the 120-second timeout</span></a></li>
+  </ul>
+</section>
+<section class="group"><h2>Client and steering</h2>
+  <ul class="clinks">
+    <li><a href="/cases/netskope-client-fail-close-on-prem-detection/"><span class="no">Case 07</span><span class="t">The office network that locked itself out</span><span class="d">Plugging into the corporate LAN killed the internet — a fail-close deadlock with no way back in.</span><span class="k">Netskope Client fail-close and on-prem detection deadlock</span></a></li>
+    <li><a href="/cases/office-share-dialog-slow-dtls-vs-tls-tunnel/"><span class="no">Case 08</span><span class="t">The 60-second Share button</span><span class="d">Office's Share dialog crawled for one user — and the obvious suspect turned out to be a lab artifact.</span><span class="k">Slow Office Share dialog: DTLS vs TLS tunnel</span></a></li>
+    <li><a href="/cases/slow-docker-push-wsl2-multiple-security-agents/"><span class="no">Case 09</span><span class="t">Docker push at one-third speed</span><span class="d">Bypassed traffic was still slow — because three security agents were stacked on one machine.</span><span class="k">Slow Docker push from WSL2 with stacked security agents</span></a></li>
+    <li><a href="/cases/macos-netskope-client-disabled-keychain-edr/"><span class="no">Case 10</span><span class="t">The client that wouldn't come back</span><span class="d">A macOS client died the same week as a major release — but the release was innocent.</span><span class="k">macOS Netskope Client disabled: keychain and EDR</span></a></li>
+    <li><a href="/cases/netskope-client-vdi-rds-greyed-out-icon/"><span class="no">Case 11</span><span class="t">The greyed-out icon on a working tunnel</span><span class="d">The UI said security was off. Traffic said otherwise — and both were telling the truth.</span><span class="k">Netskope Client on VDI/RDS: greyed-out icon, working tunnel</span></a></li>
+    <li><a href="/cases/npa-ztna-cors-preflight-nonstandard-port/"><span class="no">Case 12</span><span class="t">The CORS failure that wasn't a steering failure</span><span class="d">A private app broke on a non-standard port — and everyone assumed the port wasn't published.</span><span class="k">CORS preflight failures through Netskope Private Access (ZTNA)</span></a></li>
+  </ul>
+</section>
+<section class="group"><h2>Web and access</h2>
+  <ul class="clinks">
+    <li><a href="/cases/bank-login-sms-step-up-split-egress-ip/"><span class="no">Case 13</span><span class="t">The bank login that demanded SMS every time</span><span class="d">The bank's domains were bypassed correctly — but the login broke anyway.</span><span class="k">Bank login SMS step-up caused by split egress IPs</span></a></li>
+    <li><a href="/cases/mdm-sync-0x80190194-ssl-inspection-bypass/"><span class="no">Case 14</span><span class="t">Device management sync that bypassed the wrong domain</span><span class="d">The customer followed the vendor doc exactly — and bypassed a domain the flow never touches.</span><span class="k">MDM sync error 0x80190194 under SSL inspection</span></a></li>
+    <li><a href="/cases/rbi-remote-browser-isolation-verifying-your-browser-429/"><span class="no">Case 15</span><span class="t">The isolated site stuck on "verifying your browser"</span><span class="d">I had a confident first hypothesis. The captures proved me wrong.</span><span class="k">Remote Browser Isolation stuck on a 429 browser check</span></a></li>
+    <li><a href="/cases/webmail-fails-normal-profile-works-incognito/"><span class="no">Case 16</span><span class="t">The one where the answer was "it isn't us"</span><span class="d">Webmail failed in the normal browser profile, worked in incognito — with the client on in both.</span><span class="k">Webmail fails in a normal profile but works in incognito</span></a></li>
+    <li><a href="/cases/test-ips-threat-protection-block-page-safely/"><span class="no">Case 17</span><span class="t">Proving the block page works, without any malware</span><span class="d">Validating threat controls end to end using only harmless, industry-standard test artifacts.</span><span class="k">Testing IPS and threat protection block pages safely</span></a></li>
+    <li><a href="/cases/download-access-denied-hold-and-scan-threat-protection/"><span class="no">Case 18</span><span class="t">Downloads blocked by a scan that logged nothing</span><span class="d">"Access Denied" on a file export, and the console showed no block at all.</span><span class="k">Access Denied downloads from hold-and-scan threat protection</span></a></li>
+    <li><a href="/cases/block-ai-assistant-connectors-url-policy/"><span class="no">Case 19</span><span class="t">Blocking one feature without blocking the app</span><span class="d">Stop users wiring corporate data sources into a public AI assistant — but leave the assistant usable.</span><span class="k">Blocking AI assistant connectors with a URL policy</span></a></li>
+    <li><a href="/cases/desktop-ai-app-network-requirements-ssl-inspection/"><span class="no">Case 20</span><span class="t">Getting a new desktop app through the stack</span><span class="d">Mapping exactly what an app needs on the wire, before it becomes a ticket.</span><span class="k">Desktop AI app network requirements and SSL inspection</span></a></li>
+  </ul>
+</section>
+<aside class="author" aria-label="About the author">
+  <img src="/assets/avatar.jpg" alt="Sheikh Musavir Arfat" width="72" height="72" loading="lazy">
+  <div>
+    <b><a href="/">Sheikh Musavir Arfat</a></b>
+    <p>Netskope engineer working across SSE and SASE: SWG, SSL inspection, DLP, Private Access (ZTNA), RBI and threat protection.
+    <a href="https://verify.skilljar.com/c/fjcto4ismk7b" target="_blank" rel="noopener">Netskope Administrator</a> and
+    <a href="https://verify.skilljar.com/c/4edijfvrobxi" target="_blank" rel="noopener">Implementation and Integration</a> certified.
+    Open to Netskope implementation and delivery roles.</p>
+    <div class="ctas">
+      <a class="btn primary" href="mailto:sheich.musavir@gmail.com"><svg viewBox="0 0 16 16" aria-hidden="true"><rect x="1.5" y="3" width="13" height="10" rx="2"/><path d="m2 4 6 5 6-5"/></svg>Email me</a>
+      <a class="btn" href="https://www.linkedin.com/in/smarfat/" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn" href="/cases/">All 20 case files</a>
+    </div>
+  </div>
+</aside>
+</main>
+<footer><div class="wrap"><span>Sheikh Musavir Arfat · Netskope engineer · SSE/SASE engineer</span><span class="mono"><a href="/">sheikhmusavir.github.io</a></span></div></footer>
+<script>
+(function(){var r=document.documentElement,b=document.getElementById("theme"),m=document.querySelector('meta[name="theme-color"]');
+function set(t,s){r.setAttribute("data-theme",t);b.setAttribute("aria-label",t==="dark"?"Use light theme":"Use dark theme");m.setAttribute("content",t==="dark"?"#0A0C0F":"#F6F7F9");if(s)try{localStorage.setItem("sma-theme",t);}catch(e){}}
+set(r.getAttribute("data-theme")||"light");b.addEventListener("click",function(){set(r.getAttribute("data-theme")==="dark"?"light":"dark",true);});
+var top=document.querySelector(".top");function sc(){top.classList.toggle("scrolled",window.scrollY>8);}window.addEventListener("scroll",sc,{passive:true});sc();})();
+</script>
+</body>
+</html>
