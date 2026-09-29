@@ -1,45 +1,22 @@
-# sheikhmusavir.github.io
+# Sheikh Musavir Arfat | Netskope Implementation & SSE Engineer
 
-Personal CV site for Musavvir A. Kubravi.
-Plain HTML — one file, one photo, no build step.
+Netskope SSE engineer open to **Netskope implementation and delivery roles** with Netskope partners, system integrators and customers. Based in Bangalore, India, and open to relocation, including the UAE and the wider Middle East.
 
-## Put it live on GitHub Pages
+- **Portfolio:** [sheikhmusavir.github.io](https://sheikhmusavir.github.io/)
+- **Netskope case files:** [real investigations, root cause first](https://sheikhmusavir.github.io/cases/)
+- **LinkedIn:** [linkedin.com/in/smarfat](https://www.linkedin.com/in/smarfat/)
 
-1. Sign in as **sheikhmusavir** and go to https://github.com/new
-2. Repository name — type it exactly:
+## What I work on
 
-       sheikhmusavir.github.io
+Netskope Security Service Edge (SSE) and SASE: Secure Web Gateway (SWG) and SSL inspection, CASB, inline, endpoint and email DLP, Netskope Private Access (NPA / ZTNA), Enterprise Browser, Remote Browser Isolation (RBI), threat protection, and Netskope Client rollout and steering.
 
-   Visibility: **Public**. Do NOT tick "Add a README file".
-   Click **Create repository**.
-3. On the empty repo page, click the link
-   **"uploading an existing file"**.
-4. Drag in all three files:
+## Certifications
 
-       index.html
-       README.md
-       musavvir.jpg
+- Netskope Security Cloud Implementation and Integration
+- Netskope Administrator
+- Cisco Certified Network Professional (CCNP)
+- Palo Alto Networks Cybersecurity Foundation
 
-   Keep them at the top level — no folders. GitHub Pages only
-   serves the site if `index.html` sits in the repo root.
-5. Click **Commit changes**.
-6. Wait 1–2 minutes, then open:
+---
 
-       https://sheikhmusavir.github.io
-
-## If the page 404s
-
-- Go to **Settings → Pages**. Source should be
-  "Deploy from a branch", branch `main`, folder `/ (root)`.
-- Repo must be **Public**.
-- Repo name must match the username exactly.
-
-## If the photo doesn't show
-
-`musavvir.jpg` must be in the root, next to `index.html` —
-not inside a folder. Then hard-refresh with **Ctrl+Shift+R**.
-
-## Editing later
-
-Open `index.html` in the repo, click the pencil icon, edit, commit.
-To swap the photo, upload a new image named `musavvir.jpg`.
+This repository hosts the portfolio site above (plain HTML on GitHub Pages).
